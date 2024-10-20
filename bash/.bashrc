@@ -30,13 +30,6 @@ else
   echo -e "\e[33m WARNING: zoxide is not installed\e[0m"
 fi
 
-# ===== LSD SETUP ===== #
-if command -v lsd > /dev/null 2>&1; then
-  alias ls='lsd'
-else
-  echo -e "\e[33m WARNING: lsd is not installed\e[0m"
-fi
-
 # ===== YAZI SETUP ===== #
 if command -v yazi > /dev/null 2>&1; then
   function y() {
@@ -84,6 +77,14 @@ fi
 # ===== REMOTE CONNETIONS ===== #
 if [ -f ~/.bash/ssh_aliases ]; then
   . ~/.bash/ssh_aliases
+fi
+
+# ===== LSD SETUP ===== #
+# i am not sure why, but at the beginning, this does not work
+if command -v lsd > /dev/null 2>&1; then
+  alias ls='lsd'
+else
+  echo -e "\e[33m WARNING: lsd is not installed\e[0m"
 fi
 
 #export DRI_PRIME=1
