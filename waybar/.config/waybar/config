@@ -1,0 +1,123 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-right": [
+      "pulseaudio", 
+      "backlight", 
+      "network",
+      "cpu",
+      "temperature",
+      "battery", 
+      "clock", 
+      "tray", 
+      "custom/lock", 
+      "custom/power"
+    ],
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": true,
+      "warp-on-scroll": false,
+      "format": "{name}: {icon}",
+      "format-icons": {
+          "urgent": "",
+          "active": "",
+          "default": ""
+    }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+    "network": {
+          // "interface": "wlp2*", // (Optional) To force the use of this interface
+          "format-wifi": "{essid} ({signalStrength}%) ",
+          "format-ethernet": "{ipaddr}/{cidr} ",
+          "tooltip-format": "{ifname} via {gwaddr} ",
+          "format-linked": "{ifname} (No IP) ",
+          "format-disconnected": "Disconnected ⚠",
+          "format-alt": "{ifname}: {ipaddr}/{cidr}"
+      },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
+        "format": "",
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+          "shutdown": "shutdown",
+          "reboot": "reboot",
+          "suspend": "systemctl suspend",
+          "hibernate": "systemctl hibernate"
+    }
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+}
