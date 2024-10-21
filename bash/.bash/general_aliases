@@ -1,5 +1,7 @@
 alias qnb='pyglobal && jupyter notebook --no-browser'
 alias ttail='tail -n 1'
+
+# mount BIG with write permissions
 alias mBIG='sudo mount /dev/sda2 ~/BIG/ -o umask=000'
 
 
