@@ -6,17 +6,17 @@
 
 # NOTE: This depends on gum https://github.com/charmbracelet/gum
 
-election=$(gum choose --header "Select tmux action" "target attach" "new session")
+SELECTION=$(gum choose --header "Select tmux action" "target attach" "new session")
 
-case "$election" in
+case "$SELECTION" in
   "target attach")
-    all_sessions=$(tmux list-sessions -F "#S")
-    session_name=$(gum choose --header "Select a session:" $all_sessions)
-    tmux attach -t $session_name
+    ALL_SESSIONS=$(tmux list-sessions -F "#S")
+    SESSION_NAME=$(gum choose --header "Select a session:" $ALL_SESSIONS)
+    tmux attach -t $SESSION_NAME
   ;;
   "new session")
-    session_name=$(gum input --placeholder "Name of new tmux session")
-    tmux new-session -s $session_name
+    SESSION_NAME=$(gum input --placeholder "Name of new tmux session")
+    tmux new-session -s $SESSION_NAME
   ;;
 esac
 
