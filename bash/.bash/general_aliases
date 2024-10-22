@@ -6,4 +6,5 @@ alias mBIG='sudo mount /dev/sda2 ~/BIG/ -o umask=000'
 
 # ===== TUI ALIASES ===== #
 alias gmux='~/dotfiles/tui/gmux.sh'
+alias cm='~/dotfiles/tui/quick_commits.sh'
 
