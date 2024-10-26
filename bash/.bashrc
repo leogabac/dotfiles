@@ -87,6 +87,11 @@ else
   echo -e "\e[33m WARNING: lsd is not installed\e[0m"
 fi
 
+# ===== PYTHON ENVIRONMENTS ===== #
+if [ -f ~/.bash/virtualenv_aliases ]; then
+  . ~/.bash/virtualenv_aliases
+fi
+
 #export DRI_PRIME=1
 
 export GSETTINGS_SCHEMA_DIR=/usr/share/glib-2.0/schemas/
