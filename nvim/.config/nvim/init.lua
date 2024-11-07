@@ -4,7 +4,25 @@ vim.cmd("colorscheme onedark")
 
 vim.cmd("filetype plugin on")
 
--- vim.api.nvim_set_option("clipboard", "unnamedplus")
+-- Create an autocmd group to apply settings only for .tex files
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "tex",
+    callback = function()
+        -- Enable line wrapping
+        vim.opt_local.wrap = true
+
+        -- Set line-breaking options for better readability
+        vim.opt_local.linebreak = true       -- Prevents breaking words
+        vim.opt_local.showbreak = "↪ "       -- Adds a prefix to wrapped lines
+
+        -- Optional: Set text width for automatic line wrapping
+        -- vim.opt_local.textwidth = 80         -- Wrap lines at 80 characters
+
+        -- Optional: Indentation for wrapped lines
+        -- vim.opt_local.breakindent = true
+        -- vim.opt_local.breakindentopt = "shift:2"  -- Adjust as needed
+    end,
+})
 
 -- python lsp configuration
 require("lspconfig").pylsp.setup({
