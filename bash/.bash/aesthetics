@@ -14,6 +14,52 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
+# function to visualize csv
+function pretty_csv() {
+    local usage="Usage: pretty_csv [-h lines|-t lines] <filename>
+    -h lines : Use 'head' to show the first N lines
+    -t lines : Use 'tail' to show the last N lines"
+
+    # Parse options
+    local command=""
+    local lines=""
+    
+    # Option parsing
+    while getopts "h:t:" opt; do
+        case "$opt" in
+            h) command="head"; lines="$OPTARG";;
+            t) command="tail"; lines="$OPTARG";;
+            *) echo "$usage"; return 1;;
+        esac
+    done
+    shift $((OPTIND - 1))
+
+    # Check if a filename is provided
+    if [ -z "$1" ]; then
+        echo "$usage"
+        return 1
+    fi
+
+    local filename="$1"
+
+    # Handle tail flag
+    if [ "$command" == "tail" ]; then
+        # Print column headers (first line)
+        head -n 1 "$filename" | sed -e 's/,/ ,/g' | column -t -s, 
+        # Print last N lines excluding the header
+        tail -n +2 "$filename" | tail -n "$lines" | sed -e 's/,/ ,/g' | column -t -s, | less -S
+    # Handle head flag
+    elif [ "$command" == "head" ]; then
+        # Show first N lines
+        head -n "$lines" "$filename" | sed -e 's/,/ ,/g' | column -t -s, | less -S
+    else
+        # Default behavior: show entire file
+        cat "$filename" | sed -e 's/,/ ,/g' | column -t -s, | less -S
+    fi
+}
+
+
+
 # funtion to get the current git branch
 parse_git_branch() {
   git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
