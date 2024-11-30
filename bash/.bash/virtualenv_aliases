@@ -1,4 +1,5 @@
 alias ice="source ~/.virtualenvs/ice/bin/activate"
+alias uncertainty="source ~/.virtualenvs/uncertainty/bin/activate"
 alias py310="source ~/.virtualenvs/py310/bin/activate"
 alias pyqmk="source ~/.virtualenvs/qmk/bin/activate"
 alias pyanime="source ~/.virtualenvs/pyanime/bin/activate"

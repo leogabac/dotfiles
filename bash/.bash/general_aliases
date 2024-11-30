@@ -1,3 +1,4 @@
+alias printers='sudo systemctl status cups.service && sudo systemctl status avahi-daemon.service'
 alias qnb='pyglobal && jupyter notebook --no-browser'
 alias ttail='tail -n 1'
 
