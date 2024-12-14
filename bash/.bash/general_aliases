@@ -8,5 +8,6 @@ alias BIG2='sudo mount /dev/sda2 /mnt/BIG -o umask=000'
 
 # ===== TUI ALIASES ===== #
 alias gmux='~/dotfiles/tui/gmux.sh'
+alias vpn='~/dotfiles/tui/vpn.sh'
 alias cm='~/dotfiles/tui/quick_commits.sh'
 

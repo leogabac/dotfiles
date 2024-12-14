@@ -14,9 +14,10 @@ case "$SELECTION" in
     sudo systemctl start nordvpnd.service
     nordvpn connect
     # to be able to access even if zerotier goes down
-    nordvpn set meshnet on
+    # nordvpn set meshnet on
   ;;
   "zerotier")
+    nordvpnd disconnect
     sudo systemctl stop nordvpnd.service
     sudo systemctl restart zerotier-one
   ;;
