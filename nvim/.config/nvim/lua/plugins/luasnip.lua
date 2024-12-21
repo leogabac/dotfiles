@@ -11,6 +11,7 @@ return {
     enabled=true,
     opts = function(_, opts)
       local cmp = require("cmp") -- manually added
+      local luasnip = require("luasnip")
       local auto_select = true
 
         opts.preselect = auto_select and cmp.PreselectMode.Item or cmp.PreselectMode.None
@@ -28,15 +29,26 @@ return {
             cmp.abort()
             fallback()
           end,
-          ["<tab>"] = function(fallback)
-            return LazyVim.cmp.map({ "snippet_forward", "ai_accept" }, fallback)()
-          end,
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            -- Prefer jumping if both jumping and expanding are available
+            -- Otherwise, you may recursively expand a snippet without ever jumping
+            -- (which is annoying)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.jumpable(1) then
+                luasnip.jump(1)
+            elseif luasnip.expandable() then
+                luasnip.expand()
+            else
+                fallback()
+            end
+          end, { "i", "s" }),
         })
       -- manually add sources
       opts.sources = cmp.config.sources({
           { name = "lazydev" },
           { name = "nvim_lsp" },
-          { name = "vimtex" },
+          -- { name = "vimtex" },
           { name = "path" },
         },
         {
