@@ -1,29 +1,41 @@
--- overrides for nvim-cmp
--- add cmp_luasnip as dependency
+-- modified version of
+--lua/lazyvim/plugins/extras/coding/nvim-cmp.lua
 return {
   {
     "hrsh7th/nvim-cmp",
     enabled=true,
-    -- dependencies = { "saadparwaiz1/cmp_luasnip" },
     opts = function(_, opts)
       local cmp = require("cmp") -- manually added
-      -- overwrite the snippet expansion from lazyvim
-      -- opts.snippet = {
-      --   expand = function(args)
-      --     require("luasnip").lsp_expand(args.body)
-      --   end,
-      -- }
-      -- manually added sources
-      -- lua/lazyvim/plugins/extras/coding/nvim-cmp.lua
+      local auto_select = true
+
+        opts.preselect = auto_select and cmp.PreselectMode.Item or cmp.PreselectMode.None
+      -- key mapping
+        opts.mapping = cmp.mapping.preset.insert({
+          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+          ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<CR>"] = LazyVim.cmp.confirm({ select = auto_select }),
+          ["<C-y>"] = LazyVim.cmp.confirm({ select = true }),
+          ["<S-CR>"] = LazyVim.cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<C-CR>"] = function(fallback)
+            cmp.abort()
+            fallback()
+          end,
+          ["<tab>"] = function(fallback)
+            return LazyVim.cmp.map({ "snippet_forward", "ai_accept" }, fallback)()
+          end,
+        })
+      -- manually add sources
       opts.sources = cmp.config.sources({
           { name = "lazydev" },
           { name = "nvim_lsp" },
           { name = "path" },
-        }, {
+        },
+        {
           { name = "buffer" },
         })
-      -- append the source of luasnip
-      -- table.insert(opts.sources, { name = "luasnip" })
     end,
   },
 } 
