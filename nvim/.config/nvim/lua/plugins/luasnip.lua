@@ -57,7 +57,6 @@ return {
   -- nvim-cmp integration
   {
     "hrsh7th/nvim-cmp",
-    optional = true,
     dependencies = { "saadparwaiz1/cmp_luasnip" },
     opts = function(_, opts)
       opts.snippet = {
@@ -65,7 +64,7 @@ return {
           require("luasnip").lsp_expand(args.body)
         end,
       }
-      table.insert(opts.sources,1, { name = "luasnip" })
+      table.insert(opts.sources, { name = "luasnip" })
     end,
     -- stylua: ignore
     keys = {
