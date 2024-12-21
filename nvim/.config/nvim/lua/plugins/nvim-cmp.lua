@@ -4,15 +4,15 @@ return {
   {
     "hrsh7th/nvim-cmp",
     enabled=true,
-    dependencies = { "saadparwaiz1/cmp_luasnip" },
+    -- dependencies = { "saadparwaiz1/cmp_luasnip" },
     opts = function(_, opts)
       local cmp = require("cmp") -- manually added
       -- overwrite the snippet expansion from lazyvim
-      opts.snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
-        end,
-      }
+      -- opts.snippet = {
+      --   expand = function(args)
+      --     require("luasnip").lsp_expand(args.body)
+      --   end,
+      -- }
       -- manually added sources
       -- lua/lazyvim/plugins/extras/coding/nvim-cmp.lua
       opts.sources = cmp.config.sources({
@@ -23,7 +23,7 @@ return {
           { name = "buffer" },
         })
       -- append the source of luasnip
-      table.insert(opts.sources, { name = "luasnip" })
+      -- table.insert(opts.sources, { name = "luasnip" })
     end,
   },
 } 
