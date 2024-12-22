@@ -5,18 +5,65 @@ return {
   -- disable builtin snippet support
   { "garymjr/nvim-snippets", enabled = false },
 
+  -- add luasnip
+  {
+    "L3MON4D3/LuaSnip",
+    lazy = true,
+    config = function()
+      -- load path for custom snippets
+      require("luasnip.loaders.from_lua").load({ paths = "./luasnippets" })
+      require("luasnip").config.setup {
+      update_events = 'TextChanged,TextChangedI',
+      enable_autosnippets = true,
+    }
+    end,
+    -- dependencies = {
+    --   {
+    --     "rafamadriz/friendly-snippets",
+    --     config = function()
+    --       require("luasnip.loaders.from_vscode").lazy_load()
+    --       require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets" } })
+    --     end,
+    --   },
+    -- },
+    -- opts = {
+    --   history = true,
+    --   delete_check_events = "TextChanged",
+    -- },
+  },
+
+ -- -- add snippet_forward action
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   opts = function()
+  --     LazyVim.cmp.actions.snippet_forward = function()
+  --       if require("luasnip").jumpable(1) then
+  --         require("luasnip").jump(1)
+  --         return true
+  --       end
+  --     end
+  --     LazyVim.cmp.actions.snippet_stop = function()
+  --       if require("luasnip").expand_or_jumpable() then -- or just jumpable(1) is fine?
+  --         require("luasnip").unlink_current()
+  --         return true
+  --       end
+  --     end
+  --   end,
+  -- },
+  --
+
+
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "micangl/cmp-vimtex" },
+    dependencies = { "micangl/cmp-vimtex"},
     enabled=true,
-    opts = function(_, opts)
-      local cmp = require("cmp") -- manually added
-      local luasnip = require("luasnip")
+    opts = function()
+      local cmp = require("cmp")
+      local defaults = require("cmp.config.default")()
       local auto_select = true
-
-        opts.preselect = auto_select and cmp.PreselectMode.Item or cmp.PreselectMode.None
-      -- key mapping
-        opts.mapping = cmp.mapping.preset.insert({
+      return {
+        preselect = auto_select and cmp.PreselectMode.Item or cmp.PreselectMode.None,
+        mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -29,83 +76,43 @@ return {
             cmp.abort()
             fallback()
           end,
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            -- Prefer jumping if both jumping and expanding are available
-            -- Otherwise, you may recursively expand a snippet without ever jumping
-            -- (which is annoying)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.jumpable(1) then
-                luasnip.jump(1)
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            else
-                fallback()
+          ["<tab>"] = function(fallback)
+            return LazyVim.cmp.map({ "snippet_forward", "ai_accept" }, fallback)()
+          end,
+        }),
+        sources = cmp.config.sources({
+          { name = "vimtex" },
+          -- { name = "lazydev" },
+          -- { name = "nvim_lsp" },
+          -- { name = "path" },
+        }, {
+          -- { name = "buffer" },
+        }),
+        formatting = {
+          format = function(entry, item)
+            local icons = LazyVim.config.icons.kinds
+            if icons[item.kind] then
+              item.kind = icons[item.kind] .. item.kind
             end
-          end, { "i", "s" }),
-        })
-      -- manually add sources
-      opts.sources = cmp.config.sources({
-          { name = "lazydev" },
-          { name = "nvim_lsp" },
-          -- { name = "vimtex" },
-          { name = "path" },
+
+            local widths = {
+              abbr = vim.g.cmp_widths and vim.g.cmp_widths.abbr or 40,
+              menu = vim.g.cmp_widths and vim.g.cmp_widths.menu or 30,
+            }
+
+            for key, width in pairs(widths) do
+              if item[key] and vim.fn.strdisplaywidth(item[key]) > width then
+                item[key] = vim.fn.strcharpart(item[key], 0, width - 1) .. "…"
+              end
+            end
+
+            return item
+          end,
         },
-        {
-          { name = "buffer" },
-        })
-    end,
-  },
+      }
+    end,  },
 
-  -- add luasnip
-  {
-    "L3MON4D3/LuaSnip",
-    config = function()
-      -- load path for custom snippets
-      require("luasnip.loaders.from_lua").load({ paths = "./luasnippets" })
-      require("luasnip").config.setup {
-      update_events = 'TextChanged,TextChangedI',
-      enable_autosnippets = true,
-    }
-    end,
-    lazy = true,
-    build = (not LazyVim.is_win())
-        and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
-      or nil,
-    dependencies = {
-      {
-        "rafamadriz/friendly-snippets",
-        config = function()
-          require("luasnip.loaders.from_vscode").lazy_load()
-          require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets" } })
-        end,
-      },
-    },
-    opts = {
-      history = true,
-      delete_check_events = "TextChanged",
-    },
-  },
-
-  -- add snippet_forward action
-  {
-    "L3MON4D3/LuaSnip",
-    opts = function()
-      LazyVim.cmp.actions.snippet_forward = function()
-        if require("luasnip").jumpable(1) then
-          require("luasnip").jump(1)
-          return true
-        end
-      end
-      LazyVim.cmp.actions.snippet_stop = function()
-        if require("luasnip").expand_or_jumpable() then -- or just jumpable(1) is fine?
-          require("luasnip").unlink_current()
-          return true
-        end
-      end
-    end,
-  },
-
+ 
   -- nvim-cmp integration
   {
     "hrsh7th/nvim-cmp",
@@ -116,7 +123,7 @@ return {
           require("luasnip").lsp_expand(args.body)
         end,
       }
-      table.insert(opts.sources, { name = "luasnip" })
+      table.insert(opts.sources,1, { name = "luasnip" })
     end,
     -- -- stylua: ignore
     -- keys = {
