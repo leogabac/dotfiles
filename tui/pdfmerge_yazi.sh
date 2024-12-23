@@ -1,19 +1,22 @@
 #!/bin/bash
 
-# List all PDFs in the current directory
-pdf_files=(*.pdf)
+function pathpicker() {
+	local tmp="$(mktemp -t "yazi-file.XXXXXX")" cpath
+	yazi "$@" --chooser-file="$tmp"
+	if cpath="$(command cat -- "$tmp")" && [ -n "$cpath" ] ; then
+		echo "$cpath"
+  else
+    # if cpath is blank, i.e. none is selected
+    # this happens when the program is exited
+    echo "None"
+	fi
+	rm -f -- "$tmp"
+}
 
-# Check if there are PDF files in the directory
-if [ ${#pdf_files[@]} -eq 0 ]; then
-  echo "No PDF files found in the directory."
-  exit 1
-fi
-
-options=("None" "${pdf_files[@]}")
 selected_pdfs=()
 while true; do
-  # gum time :D
-  selected_pdf=$(gum choose "${options[@]}" --header "Select PDFs or choose 'None' to finish")
+
+  selected_pdf=$(pathpicker)
 
   # exit if None is selected
   if [ "$selected_pdf" == "None" ]; then
