@@ -6,7 +6,7 @@ return {
 		local onedark = require("onedarkpro")
 
 		-- Define the initial state of background transparency
-		local bg_transparent = true
+		local bg_transparent = false
 
 		-- Function to apply theme and customize highlights
 		local apply_theme = function()

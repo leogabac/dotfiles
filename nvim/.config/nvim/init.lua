@@ -20,6 +20,7 @@ require("lazy").setup({
 	require("plugins.colorscheme"),
 	require("plugins.bufferline"),
 	require("plugins.lualine"),
+	require("plugins.noice"),
 
 	-- general programming utilities
 	require("plugins.neotree"),
@@ -29,6 +30,7 @@ require("lazy").setup({
 	require("plugins.autocompletion"),
 	require("plugins.autoformatting"),
 	require("plugins.indent-blankline"),
+	require("plugins.flash"),
 	require("plugins.gitsigns"),
 
 	require("plugins.misc"),
