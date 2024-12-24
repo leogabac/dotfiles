@@ -38,9 +38,9 @@ return {
 			-- vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#1e222a" }) -- Solid background for Telescope
 			-- vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "#1e222a", fg = "#565f89" }) -- Telescope border
 			-- Add a solid background for the bufferline
-			vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "#1e222a" })
-			vim.api.nvim_set_hl(0, "BufferLineBackground", { bg = "#1e222a", fg = "#565f89" })
-			vim.api.nvim_set_hl(0, "BufferLineSeparator", { bg = "#1e222a", fg = "#282c34" })
+			-- vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "#1e222a" })
+			-- vim.api.nvim_set_hl(0, "BufferLineBackground", { bg = "#1e222a", fg = "#565f89" })
+			-- vim.api.nvim_set_hl(0, "BufferLineSeparator", { bg = "#1e222a", fg = "#282c34" })
 		end
 
 		-- Initial theme setup
