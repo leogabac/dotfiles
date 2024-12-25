@@ -13,6 +13,7 @@ return {
 	s(";a", { t("\\alpha") }),
 	s(";b", { t("\\beta") }),
 	s(";g", { t("\\gamma") }),
+	s(";inf", { t("\\infty") }),
 	-- placeholder text for cites
 	s("needcite", { t("\\textbf{[CITE]}") }),
 
@@ -27,10 +28,16 @@ return {
 			{ delimiters = "<>" }
 		)
 	),
-
+	-- math text
+	s("tm", fmt(
+			"\\mathrm{<>}",
+			{ i(0) },
+			{ delimiters = "<>" }
+		)
+	),
 	-- dfrac
-	s("dfrac", fmt(
-			"\\dfrac{<>}{<>}",
+	s("ff", fmt(
+			"\\frac{<>}{<>}",
 			{ i(1), i(2) },
 			{ delimiters = "<>" }
 		)
@@ -42,7 +49,13 @@ return {
 			{ delimiters = "<>" }
 		)
 	),
-
+	-- sum
+	s("sum", fmt(
+			"\\sum_{<>}^{<>} <>",
+			{ i(1), i(2), i(0) },
+			{ delimiters = "<>" }
+		)
+	),
 	-- generic environment
 	s("env", fmt(
 		[[

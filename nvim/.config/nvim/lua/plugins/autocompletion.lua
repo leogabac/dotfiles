@@ -35,7 +35,7 @@ return { -- Autocompletion
 			},
 		},
 		"saadparwaiz1/cmp_luasnip",
-		"micangl/cmp-vimtex",
+		{"micangl/cmp-vimtex", ft="tex"},
 		-- Adds other completion capabilities.
 		--  nvim-cmp does not ship with all sources by default. They are split
 		--  into multiple repos for maintenance purposes.
@@ -134,8 +134,8 @@ return { -- Autocompletion
 
 				-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 				--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
-				
-				-- Note: Should I make the tab only for jumping like C-l and C-h?
+
+				-- tab only jumps
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if luasnip.expand_or_locally_jumpable() then
 						luasnip.expand_or_jump()
