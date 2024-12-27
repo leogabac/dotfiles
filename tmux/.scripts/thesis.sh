@@ -11,6 +11,6 @@ else
     echo "Creating new session '$SESSION_NAME'..."
     # Create a new tmux session and run the commands
     tmux new-session -d -s "$SESSION_NAME"
-    tmux send-keys -t "$SESSION_NAME" "cd $WORK_DIR && clear && nvim" Enter
+    tmux send-keys -t "$SESSION_NAME" "cd $WORK_DIR && clear && nvim main.tex" Enter
     tmux attach-session -t "$SESSION_NAME"
 fi
