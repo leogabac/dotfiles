@@ -31,7 +31,7 @@ require("lazy").setup({
 	-- require("plugins.autoformatting"),
 	require("plugins.indent-blankline"),
 	require("plugins.flash"),
-	require("plugins.gitsigns"),
+	-- require("plugins.gitsigns"),
 
 	require("plugins.misc"),
 })

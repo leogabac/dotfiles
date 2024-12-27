@@ -2,50 +2,51 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   cmd = "Neotree",
-  keys = {
-          {
-              "<leader>fe",
-              function()
-                  -- Find the .git folder and get its parent directory
-                  local git_dir = vim.fn.finddir('.git', vim.fn.getcwd() .. ';')
-                  if git_dir ~= '' then
-                      -- Get the parent directory of .git (the project root)
-                      local root_dir = vim.fn.fnamemodify(git_dir, ':h')
-                      require("neo-tree.command").execute({ toggle = true, dir = root_dir })
-                  else
-                      -- If no .git is found, fall back to current working directory
-                      local cwd = vim.fn.getcwd()
-                      require("neo-tree.command").execute({ toggle = true, dir = cwd })
-                  end
-              end,
-              desc = "Explorer NeoTree (Root Dir)",
-          },
-          {
-              "<leader>fE",
-              function()
-                  -- Use vim.uv.cwd() for current working directory
-                  local cwd = vim.uv.cwd()
-                  require("neo-tree.command").execute({ toggle = true, dir = cwd })
-              end,
-              desc = "Explorer NeoTree (cwd)",
-          },
-          { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
-          { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
-          {
-              "<leader>ge",
-              function()
-                  require("neo-tree.command").execute({ source = "git_status", toggle = true })
-              end,
-              desc = "Git Explorer",
-          },
-          {
-              "<leader>be",
-              function()
-                  require("neo-tree.command").execute({ source = "buffers", toggle = true })
-              end,
-              desc = "Buffer Explorer",
-          },
-        },        
+  keys = {"<leader>e","<leader>ngs"},
+  -- keys = {
+  --         {
+  --             "<leader>fe",
+  --             function()
+  --                 -- Find the .git folder and get its parent directory
+  --                 local git_dir = vim.fn.finddir('.git', vim.fn.getcwd() .. ';')
+  --                 if git_dir ~= '' then
+  --                     -- Get the parent directory of .git (the project root)
+  --                     local root_dir = vim.fn.fnamemodify(git_dir, ':h')
+  --                     require("neo-tree.command").execute({ toggle = true, dir = root_dir })
+  --                 else
+  --                     -- If no .git is found, fall back to current working directory
+  --                     local cwd = vim.fn.getcwd()
+  --                     require("neo-tree.command").execute({ toggle = true, dir = cwd })
+  --                 end
+  --             end,
+  --             desc = "Explorer NeoTree (Root Dir)",
+  --         },
+  --         {
+  --             "<leader>fE",
+  --             function()
+  --                 -- Use vim.uv.cwd() for current working directory
+  --                 local cwd = vim.uv.cwd()
+  --                 require("neo-tree.command").execute({ toggle = true, dir = cwd })
+  --             end,
+  --             desc = "Explorer NeoTree (cwd)",
+  --         },
+  --         { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
+  --         { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
+  --         {
+  --             "<leader>ge",
+  --             function()
+  --                 require("neo-tree.command").execute({ source = "git_status", toggle = true })
+  --             end,
+  --             desc = "Git Explorer",
+  --         },
+  --         {
+  --             "<leader>be",
+  --             function()
+  --                 require("neo-tree.command").execute({ source = "buffers", toggle = true })
+  --             end,
+  --             desc = "Buffer Explorer",
+  --         },
+  --       },
   branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -336,7 +337,7 @@ config = function()
     }
 
     vim.cmd [[nnoremap \ :Neotree reveal<cr>]]
-    -- vim.keymap.set('n', '<leader>e', ':Neotree toggle position=left<CR>', { noremap = true, silent = true }) -- focus file explorer
-    -- vim.keymap.set('n', '<leader>ngs', ':Neotree float git_status<CR>', { noremap = true, silent = true }) -- open git status window
+    vim.keymap.set('n', '<leader>e', ':Neotree toggle position=left<CR>', { noremap = true, silent = true }) -- focus file explorer
+    vim.keymap.set('n', '<leader>ngs', ':Neotree float git_status<CR>', { noremap = true, silent = true }) -- open git status window
   end,
 }
