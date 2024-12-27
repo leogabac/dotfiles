@@ -70,3 +70,8 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- clear search selection on <Esc>
 vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR><Esc>", { noremap = true, silent = true })
+
+-- better pasting
+-- vim.keymap.set("x", "p", '"_dP')
+-- vim.keymap.set("x", "<leader>p", "P")
+vim.keymap.set({ "n", "x" }, "<leader>p", [["0p]], { desc = "paste from yank register" })
