@@ -28,7 +28,7 @@ require("lazy").setup({
 	require("plugins.treesitter"),
 	require("plugins.lsp"),
 	require("plugins.autocompletion"),
-	-- require("plugins.autoformatting"),
+	require("plugins.autoformatting"),
 	require("plugins.indent-blankline"),
 	require("plugins.flash"),
 	-- require("plugins.gitsigns"),
