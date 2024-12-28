@@ -34,4 +34,5 @@ require("lazy").setup({
 	-- require("plugins.gitsigns"),
 
 	require("plugins.misc"),
+	-- require("plugins.markdown-setup"),
 })

@@ -45,6 +45,39 @@ return {
 			end,
 			desc = "Buffer Explorer",
 		},
+		{
+			"<leader>fb", -- Keybinding for opening NeoTree with reset state
+			function()
+				-- Get the Git root directory
+				local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+				local buffer_dir = vim.fn.expand("%:p:h")
+
+				-- Define the base directory
+				local base_dir = buffer_dir
+				if vim.v.shell_error == 0 and git_root and git_root ~= "" then
+					base_dir = git_root
+				end
+
+				-- Reset NeoTree configuration or options
+				-- require("neo-tree").setup({
+				-- 	filesystem = {
+				-- 		visible=false,
+				-- 		hide_dotfiles=false,
+				-- 		hide_gitignored=true,
+				-- 		follow_current_file = true,
+				-- 		use_libuv_file_watcher = true,
+				-- 	},
+				-- })
+				--
+				-- Toggle NeoTree with the determined base directory and reveal the buffer
+				require("neo-tree.command").execute({
+					toggle = true,
+					dir = base_dir,
+					reveal = buffer_dir,
+				})
+			end,
+			desc = "Explorer NeoTree (Reset on Toggle)",
+		},
 	},
 	branch = "v3.x",
 	dependencies = {

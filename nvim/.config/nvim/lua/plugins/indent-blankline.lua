@@ -6,9 +6,11 @@ return {
 			char = "▏",
 		},
 		scope = {
+			enabled = true,
 			show_start = false,
 			show_end = false,
 			show_exact_scope = false,
+			-- highlight = "IndentBlanklineScope", -- Set the highlight group for the current scope
 		},
 		exclude = {
 			filetypes = {
@@ -22,4 +24,5 @@ return {
 			},
 		},
 	},
+	-- vim.api.nvim_set_hl(0, "IndentBlanklineScope", { fg = "#1bbae4", bold = true })
 }

@@ -175,6 +175,7 @@ return {
         -- ts_ls = {},
         --
 
+      marksman = {},
         ruff = {},
         pylsp = {
         settings = {

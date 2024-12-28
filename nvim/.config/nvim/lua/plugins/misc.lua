@@ -44,7 +44,7 @@ return {
 	{
 		-- basic setup for latex
 		"lervag/vimtex",
-		ft="tex",
+		ft = "tex",
 		lazy = false, -- we don't want to lazy load VimTeX
 		-- tag = "v2.15", -- uncomment to pin to a specific release
 		init = function()
@@ -53,4 +53,14 @@ return {
 			vim.g.vimtex_compiler_method = "latexmk"
 		end,
 	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+	-- 	build = "cd app && yarn install",
+	-- 	init = function()
+	-- 		vim.g.mkdp_filetypes = { "markdown" }
+	-- 	end,
+	-- 	ft = { "markdown" },
+	-- },
+	
 }
