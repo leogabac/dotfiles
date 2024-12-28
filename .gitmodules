@@ -1,0 +1,3 @@
+[submodule "leovim/.config/nvim"]
+	path = leovim/.config/nvim
+	url = https://github.com/leogabac/leovim.git
