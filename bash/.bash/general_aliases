@@ -11,11 +11,11 @@ alias full_upgrade='~/update.sh'
 alias apps='cd ~/.local/share/applications/'
 
 # ===== TUI ALIASES ===== #
-alias gmux='~/dotfiles/tui/gmux.sh'
-alias pdfmerge='~/dotfiles/tui/pdfmerge.sh'
-alias ypdf='~/dotfiles/tui/pdfmerge_yazi.sh'
-alias vpn='~/dotfiles/tui/vpn.sh'
-alias cm='~/dotfiles/tui/quick_commits.sh'
+alias gmux='~/dotfiles/tui/.tui/gmux.sh'
+alias pdfmerge='~/dotfiles/tui/.tui/pdfmerge.sh'
+alias ypdf='~/dotfiles/tui/.tui/pdfmerge_yazi.sh'
+alias vpn='~/dotfiles/tui/.tui/vpn.sh'
+alias cm='~/dotfiles/tui/.tui/quick_commits.sh'
 
 # ===== NEOVIM ===== #
 alias lvim='NVIM_APPNAME="nvim-lazyvim" nvim'
