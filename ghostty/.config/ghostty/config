@@ -27,5 +27,3 @@ palette = 12=#0000ff
 palette = 13=#ff00ff
 palette = 14=#00ffff
 palette = 15=#ffffff
-
-initial-command = fastfetch
