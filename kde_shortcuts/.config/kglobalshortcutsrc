@@ -259,9 +259,6 @@ switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
 
-[services][kitty.desktop]
-_launch=Ctrl+Alt+T
-
 [services][org.kde.konsole.desktop]
 _launch=none
 
@@ -270,6 +267,9 @@ _launch=Search\tAlt+F2\tAlt+Space\tMeta
 
 [services][org.kde.spectacle.desktop]
 RecordWindow=none
+
+[services][org.wezfurlong.wezterm.desktop]
+_launch=Ctrl+Alt+T
 
 [services][xfce4-terminal-2.desktop]
 _launch=Meta+Return
