@@ -47,7 +47,16 @@ config.window_padding = {
 -- THEME
 -- ======================================
 
-config.window_background_image = constants.bg_image_darker_blurred
+-- config.window_background_image = constants.bg_image_darker_blurred
+config.background = {
+    {
+        source = {File = constants.bg_image_darker_blurred},
+        vertical_align = 'Middle',
+        horizontal_align = 'Center',
+        -- width = "100%",
+        -- height = "100%"
+    }
+}
 config.color_scheme = 'Abernathy'
 
 -- ======================================
