@@ -35,7 +35,8 @@ config.colors = {
 -- ======================================
 
 config.window_decorations ="RESIZE"
-config.hide_tab_bar_if_only_one_tab = true
+-- config.hide_tab_bar_if_only_one_tab = true
+config.enable_tab_bar = false
 config.window_padding = {
     left = 0,
     right = 0,
