@@ -18,6 +18,7 @@ alias vpn='~/dotfiles/tui/.tui/vpn.sh'
 alias cm='~/dotfiles/tui/.tui/quick_commits.sh'
 
 # ===== NEOVIM ===== #
+alias md='MARKDOWN=1 nvim'
 alias lvim='NVIM_APPNAME="nvim-lazyvim" nvim'
 alias nvchad='NVIM_APPNAME="nvchad" nvim'
 alias evim='cd ~/.config/nvim/ && nvim'
