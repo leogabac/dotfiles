@@ -1,7 +1,7 @@
 # ==============================================================================
 # GLOBAL VARIABLES
 # ==============================================================================
-
+# export QT_QPA_PLATFORMTHEME=gtk2
 HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
@@ -95,3 +95,9 @@ fi
 #export DRI_PRIME=1
 
 export GSETTINGS_SCHEMA_DIR=/usr/share/glib-2.0/schemas/
+# export PATH="$HOME/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
+export PATH="/home/frieren/bin:$PATH"
