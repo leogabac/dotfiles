@@ -5,7 +5,7 @@ if ! command -v tmux > /dev/null 2>&1; then
   echo -e "\e[33m WARNING: tmux is not installed\e[0m"
 fi
 
-alias thesis='~/.scripts/thesis.sh'
+alias thesis='~/.scripts/tmux/thesis.sh'
 
 alias tns='tmux new-session -s'
 alias tls='tmux list-sessions'
