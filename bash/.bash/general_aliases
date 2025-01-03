@@ -12,10 +12,10 @@ alias apps='cd ~/.local/share/applications/'
 
 # ===== TUI ALIASES ===== #
 # alias gmux='~/dotfiles/tui/.tui/gmux.sh'
-alias pdfmerge='~/dotfiles/tui/.tui/pdfmerge.sh'
-alias ypdf='~/.tui/pdfmerge_yazi.sh'
-alias cm='~/dotfiles/tui/.tui/quick_commits.sh'
 # alias vpn='~/dotfiles/tui/.tui/vpn.sh'
+alias pdfmerge='~/.scripts/tui/pdfmerge.sh'
+alias ypdf='~/.scripts/tui/pdfmerge_yazi.sh'
+alias cm='~/.scripts/tui/quick_commits.sh'
 
 # ===== NEOVIM ===== #
 alias md='MARKDOWN=1 nvim'
