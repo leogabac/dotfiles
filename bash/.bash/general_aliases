@@ -14,6 +14,7 @@ alias apps='cd ~/.local/share/applications/'
 # alias gmux='~/dotfiles/tui/.tui/gmux.sh'
 # alias vpn='~/dotfiles/tui/.tui/vpn.sh'
 alias pdfmerge='~/.scripts/tui/pdfmerge.sh'
+alias md2pdf='~/.scripts/md2pdf/md2pdf.sh'
 alias ypdf='~/.scripts/tui/pdfmerge_yazi.sh'
 alias cm='~/.scripts/tui/quick_commits.sh'
 

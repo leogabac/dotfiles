@@ -1,0 +1,28 @@
+\usepackage{xcolor}
+\usepackage{listings}
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    numbers=left,
+    numberstyle=\footnotesize\color{black},
+    firstnumber=1,   % Ensure numbering starts correctly
+    % numbersep=10pt,
+    xleftmargin=20pt, % Shift content to make space for numbers
+    backgroundcolor=\color{black!10},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=true,
+    breakautoindent=true,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\color{red}{$\hookleftarrow$}}, % Indicate line wrap
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, % Show continuation
+    frame=single,
+    framexleftmargin=20pt,
+    framextopmargin=5pt,
+    framexbottommargin=5pt,
+    linewidth=\dimexpr\textwidth-25pt\relax  % Adjust width to fit line numbers
+}
+
