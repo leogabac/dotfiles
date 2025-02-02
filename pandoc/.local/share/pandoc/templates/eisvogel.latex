@@ -40,6 +40,7 @@
 % https://github.com/Wandmalfarbe/pandoc-latex-template
 %%
 % Options for packages loaded elsewhere
+
 \PassOptionsToPackage{unicode$for(hyperrefoptions)$,$hyperrefoptions$$endfor$}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
@@ -879,6 +880,10 @@ contents={%
 }
 $endif$
 $endif$
+
+\usepackage{tcolorbox}
+\newtcolorbox[auto counter, number within=section]{admonition}[2][]{colback=blue!5!white, colframe=blue!75!black, coltitle=black, title=#2, #1}
+
 
 \begin{document}
 
