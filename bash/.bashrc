@@ -22,14 +22,6 @@ alias reload='source ~/.bashrc'
 # SETUPS AND BINARY REMAPPINGS
 # ==============================================================================
 
-# ===== ZOXIDE SETUP ===== #
-if command -v zoxide > /dev/null 2>&1; then
-  eval "$(zoxide init bash)"
-  alias cd='z'
-else
-  echo -e "\e[33m WARNING: zoxide is not installed\e[0m"
-fi
-
 # ===== YAZI SETUP ===== #
 if command -v yazi > /dev/null 2>&1; then
   function y() {
@@ -101,3 +93,17 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 
 export PATH="/home/frieren/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
+
+# ===== ZOXIDE SETUP ===== #
+if command -v zoxide > /dev/null 2>&1; then
+  eval "$(zoxide init bash)"
+  alias cd='z'
+else
+  echo -e "\e[33m WARNING: zoxide is not installed\e[0m"
+fi
+
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
