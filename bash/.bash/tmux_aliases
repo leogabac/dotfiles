@@ -6,12 +6,5 @@ if ! command -v tmux > /dev/null 2>&1; then
 fi
 
 alias thesis='~/.scripts/tmux/thesis.sh'
-
-alias tns='tmux new-session -s'
-alias tls='tmux list-sessions'
-alias tqa='tmux attach'
-alias tta='tmux attach -t'
-alias tks='tmux kill-session -t'
-alias tconf='nvim ~/.tmux.conf'
-
+alias tss='~/.scripts/tmux/tmux-sessionizer.sh'
 
