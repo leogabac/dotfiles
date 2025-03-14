@@ -10,7 +10,7 @@ alias full_upgrade='~/.scripts/update.sh'
 alias apps='cd ~/.local/share/applications/'
 
 # ===== TUI ALIASES ===== #
-alias cdf='~/.scripts/cd-fzf.sh'
+alias cdf='source ~/.scripts/cd-fzf.sh' # avoid subshell
 alias pdfmerge='~/.scripts/tui/pdfmerge.sh'
 alias md2pdf='~/.scripts/md2pdf/md2pdf.sh'
 alias ypdf='~/.scripts/tui/pdfmerge_yazi.sh'
