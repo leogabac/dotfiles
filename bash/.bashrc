@@ -84,15 +84,12 @@ if [ -f ~/.bash/virtualenv_aliases ]; then
   . ~/.bash/virtualenv_aliases
 fi
 
-#export DRI_PRIME=1
-
 export GSETTINGS_SCHEMA_DIR=/usr/share/glib-2.0/schemas/
-# export PATH="$HOME/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
 
-export PATH="/home/frieren/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
 
 # ===== ZOXIDE SETUP ===== #

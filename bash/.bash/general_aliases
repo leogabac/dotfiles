@@ -1,5 +1,4 @@
 alias printers='sudo systemctl status cups.service && sudo systemctl status avahi-daemon.service'
-alias qnb='pyglobal && jupyter notebook --no-browser'
 alias ttail='tail -n 1'
 
 # mount BIG with write permissions
@@ -11,15 +10,12 @@ alias full_upgrade='~/.scripts/update.sh'
 alias apps='cd ~/.local/share/applications/'
 
 # ===== TUI ALIASES ===== #
-# alias gmux='~/dotfiles/tui/.tui/gmux.sh'
-# alias vpn='~/dotfiles/tui/.tui/vpn.sh'
+alias cdf='~/.scripts/cd-fzf.sh'
 alias pdfmerge='~/.scripts/tui/pdfmerge.sh'
 alias md2pdf='~/.scripts/md2pdf/md2pdf.sh'
 alias ypdf='~/.scripts/tui/pdfmerge_yazi.sh'
 alias cm='~/.scripts/tui/quick_commits.sh'
 
 # ===== NEOVIM ===== #
-alias md='MARKDOWN=1 nvim'
 alias lvim='NVIM_APPNAME="nvim-lazyvim" nvim'
 alias nvchad='NVIM_APPNAME="nvchad" nvim'
-alias evim='cd ~/.config/nvim/ && nvim'
