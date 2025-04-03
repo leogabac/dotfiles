@@ -2,12 +2,13 @@
 _k_friendly_name=Activity Manager
 switch-to-activity-0f6532d0-9b81-49c7-adae-5c1840079b65=none,none,Switch to activity "Default"
 switch-to-activity-2684c279-548c-466d-b79f-18c0a9e06322=none,none,Switch to activity "Default"
+switch-to-activity-309b58a4-3282-4942-8148-4282c0703944=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
 Switch keyboard layout to Spanish (Latin American)=none,none,Switch keyboard layout to Spanish (Latin American)
 Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Switch to Last-Used Keyboard Layout
-Switch to Next Keyboard Layout=Meta+Space\tMeta+Alt+K,Meta+Alt+K,Switch to Next Keyboard Layout
+Switch to Next Keyboard Layout=Meta+Space,Meta+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
 
 [kaccess]
@@ -17,7 +18,7 @@ _k_friendly_name=Accessibility
 [kcm_touchpad]
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
 Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
-Toggle Touchpad=Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Toggle Touchpad
+Toggle Touchpad=Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Touchpad Toggle\tTouchpad Toggle\tMeta+Ctrl+Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Toggle Touchpad
 _k_friendly_name=Touchpad
 
 [kmix]
@@ -244,6 +245,7 @@ activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
 activate widget 27=none,none,Activate Application Menu Widget
+activate widget 28=none,none,Activate Application Menu Widget
 activate widget 30=none,none,Activate Pager Widget
 activate widget 52=none,none,Activate Application Menu Widget
 activate widget 79=none,none,Activate Application Menu Widget
@@ -278,3 +280,14 @@ RecordWindow=none
 
 [services][xfce4-terminal-2.desktop]
 _launch=Meta+Return
+
+[wacomtablet]
+Map to fullscreen=Meta+Ctrl+F,Meta+Ctrl+F,Map to fullscreen
+Map to screen 1=Meta+Ctrl+1,Meta+Ctrl+1,Map to screen 1
+Map to screen 2=Meta+Ctrl+2,Meta+Ctrl+2,Map to screen 2
+Next Profile=Meta+Ctrl+N,Meta+Ctrl+N,Next profile
+Previous Profile=Meta+Ctrl+P,Meta+Ctrl+P,Previous Profile
+Toggle screen map selection=Meta+Ctrl+M,Meta+Ctrl+M,Toggle between all screens
+Toggle stylus mode=Meta+Ctrl+S,Meta+Ctrl+S,Toggle the Stylus Tool Relative/Absolute
+Toggle touch tool=Meta+Ctrl+T,Meta+Ctrl+T,Enable/Disable the Touch Tool
+_k_friendly_name=Wacom Tablet
