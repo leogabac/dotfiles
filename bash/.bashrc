@@ -92,6 +92,7 @@ eval "$(pyenv init - bash)"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
 
+
 # ===== ZOXIDE SETUP ===== #
 if command -v zoxide > /dev/null 2>&1; then
   eval "$(zoxide init bash)"
