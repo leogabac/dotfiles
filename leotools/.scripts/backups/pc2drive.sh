@@ -15,6 +15,11 @@ LABEL="bloodraven"
 UUID="3B479ACA6574FECE"
 MOUNT_POINT=$(findmnt -rn -S UUID=$UUID -o TARGET)
 
+# ===== LOGGING ===== #
+LOG_DIR="$HOME/backup_logs/$LABEL"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/backup_$(date +%F_%T).log"
+exec > >(tee -a "$LOG_FILE") 2>&1
 
 if [ -z "$MOUNT_POINT" ]; then
   echo -e "${RED}[ERROR] Drive with label $LABEL not mounted. Exiting.${NC}"
@@ -55,5 +60,10 @@ for DIR in "${DIRS_TO_SYNC[@]}"; do
   fi
 done
 
-echo -e "[${GREEN}OK${NC}] COMPLETED"
+# ===== BACKUP COMPLETED ===== #
+echo -e "[${GREEN}OK${NC}] Backup completed"
 
+# Send success notification
+if command -v notify-send >/dev/null 2>&1; then
+  notify-send "Backup Completed" "Your backup has finished successfully!"
+fi
