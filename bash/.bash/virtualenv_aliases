@@ -1,4 +1,0 @@
-alias ice="source ~/.virtualenvs/ice/bin/activate"
-alias uncertainty="source ~/.virtualenvs/uncertainty/bin/activate"
-alias demucs_env="source ~/.virtualenvs/demucs/bin/activate"
-alias py312="source ~/.virtualenvs/py3.12/bin/activate"
