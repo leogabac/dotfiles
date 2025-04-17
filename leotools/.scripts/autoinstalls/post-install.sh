@@ -18,7 +18,7 @@ relevant_packages=(
     sshfs
     )
 for package in ${relevant_packages[@]}; do
-    echo "sudo pacman -S --noconfirm ${package}"
+    sudo pacman -S --noconfirm ${package}
 done
 
 
@@ -31,7 +31,7 @@ python_build=(
     tk
     )
 for package in ${python_build[@]}; do
-    echo "sudo pacman -S --needed --noconfirm ${package}"
+    sudo pacman -S --needed --noconfirm ${package}
 done
 
 echo -e "[\033[33mINFO\033[0m] Installing command line utilities"
@@ -48,7 +48,7 @@ cli=(
     cronie
     )
 for package in ${cli[@]}; do
-    echo "sudo pacman -S --noconfirm ${package}"
+    sudo pacman -S --noconfirm ${package}
 done
 
 
@@ -61,7 +61,7 @@ dev_tools=(
     marksman
     )
 for package in ${dev_tools[@]}; do
-    echo "sudo pacman -S --noconfirm ${package}"
+    sudo pacman -S --noconfirm ${package}
 done
 
 
@@ -79,7 +79,7 @@ desktop_soft=(
     evince
     )
 for package in ${desktop_soft[@]}; do
-    echo "sudo pacman -S --noconfirm ${package}"
+    sudo pacman -S --noconfirm ${package}
 done
 
 echo -e "[\033[33mINFO\033[0m] Installing LaTeX dependencies"
@@ -91,14 +91,14 @@ git clone https://aur.archlinux.org/yay.git /tmp/yay
 cd /tmp/yay
 makepkg -si
 
-install proto nerdfont
+# install proto nerdfont
 wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/0xProto.zip
 cd ~/.local/share/fonts
 unzip 0xProto.zip
 rm 0xProto.zip
 fc-cache -fv
 
-zerotier
+# zerotier
 sudo pacman -S zerotier-one
 sudo systemctl enable zerotier-one.service
 sudo systemctl start zerotier-one.service
@@ -111,7 +111,7 @@ aur_packages=(
     zotero-bin
     )
 for package in ${aur_packages[@]}; do
-    echo "yay -S --noconfirm ${package}"
+    yay -S --noconfirm ${package}
 done
 
 
