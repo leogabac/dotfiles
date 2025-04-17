@@ -3,15 +3,14 @@
 # ==============================================================================
 
 # function to get the current git branch
-parse_git_branch() {
+git_branch() {
   git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 # trim the directory to show only the last folder
 PROMPT_DIRTRIM=1
-export PROMPT_COMMAND='PS1_CMD1=$(parse_git_branch)'
+export PROMPT_COMMAND='PS1_CMD1=$(git_branch)'
 PS1='\[\e[1m\][\[\e[32m\]\u\[\e[39m\]]\[\e[0m\] \[\e[96;1m\]\w\[\e[0m\]\[\e[1m\]${PS1_CMD1}\[\e[0m\]>'
-
 
 # ==============================================================================
 # GLOBAL VARIABLES
@@ -19,17 +18,11 @@ PS1='\[\e[1m\][\[\e[32m\]\u\[\e[39m\]]\[\e[0m\] \[\e[96;1m\]\w\[\e[0m\]\[\e[1m\]
 HISTCONTROL=ignoreboth
 
 shopt -s histappend # append to the history file, don't overwrite it
+shopt -s checkwinsize
 
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# ===== GENERAL ALISES ===== #
-alias econf='nvim ~/.bashrc && source ~/.bashrc'
-alias reload='source ~/.bashrc'
 
 # ==============================================================================
 # SETUPS AND BINARY REMAPPINGS
@@ -53,11 +46,12 @@ fi
 # ALIASES AND MODULES
 # ==============================================================================
 
-# mount BIG with write permissions
-alias mBIG='sudo mount /dev/sda2 ~/BIG/ -o umask=000'
-
-# ===== SYSTEM ALIASES ===== #
+alias ls='lsd'
+alias econf='nvim ~/.bashrc'
+alias reload='source ~/.bashrc'
 alias full_upgrade='~/.scripts/update.sh'
+
+# alias mBIG='sudo mount /dev/sda2 ~/BIG/ -o umask=000'
 
 # ===== TUI ALIASES ===== #
 alias cdf='source ~/.scripts/cd-fzf.sh' # avoid subshell
@@ -69,24 +63,11 @@ alias cm='~/.scripts/tui/quick_commits.sh'
 alias lvim='NVIM_APPNAME="nvim-lazyvim" nvim'
 
 # ===== TMUX ===== #
-# give a warning if tmux is not installed
-if ! command -v tmux > /dev/null 2>&1; then
-  echo -e "\e[33m WARNING: tmux is not installed\e[0m"
-fi
-
-alias thesis='~/.scripts/tmux/thesis.sh'
 alias tss='~/.scripts/tmux/tmux-sessionizer.sh'
 
 # ===== REMOTE CONNETIONS ===== #
 if [ -f ~/.bash/ssh_aliases ]; then
   . ~/.bash/ssh_aliases
-fi
-
-# ===== LSD SETUP ===== #
-if command -v lsd > /dev/null 2>&1; then
-  alias ls='lsd'
-else
-  echo -e "\e[33m WARNING: lsd is not installed\e[0m"
 fi
 
 # ===== PYTHON ENVIRONMENTS ===== #
