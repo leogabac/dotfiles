@@ -1,0 +1,23 @@
+[general]
+rsync_flags = "-avh --delete"
+
+[[drives]]
+label = "bloodraven"
+uuid = "3B479ACA6574FECE"
+
+[[drives]]
+label = "aura"
+uuid = "4051FBFC5BE73E7F"
+
+[[default]]
+name = "general"
+sources = ["/home/leogabac/shorui", "/home/leogabac/Desktop"]
+
+[[custom]]
+name = "share"
+label = "bloodraven"
+uuid = "3B479ACA6574FECE"
+sources = ["/home/leogabac/share"]
+tgbase = ""
+rsync_flags = "-avh --delete"
+
