@@ -1,5 +1,7 @@
 [general]
 rsync_flags = "-avh --delete"
+pcname = "holo"
+tgbase = "pc_backups"
 
 [[drives]]
 label = "bloodraven"
