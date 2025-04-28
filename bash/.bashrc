@@ -54,7 +54,7 @@ alias full_upgrade='~/.scripts/update.sh'
 # alias mBIG='sudo mount /dev/sda2 ~/BIG/ -o umask=000'
 
 # ===== TUI ALIASES ===== #
-alias cdf='source ~/.scripts/cd-fzf.sh' # avoid subshell
+alias cdf='source ~/.scripts/cd-fzf.sh .' # avoid subshell
 alias pdfmerge='~/.scripts/tui/pdfmerge.sh'
 alias ypdf='~/.scripts/tui/pdfmerge_yazi.sh'
 alias cm='~/.scripts/tui/quick_commits.sh'
