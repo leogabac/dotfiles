@@ -50,6 +50,7 @@ alias ls='lsd'
 alias econf='nvim ~/.bashrc'
 alias reload='source ~/.bashrc'
 alias full_upgrade='~/.scripts/update.sh'
+alias fqinfo='cpupower frequency-info'
 
 # alias mBIG='sudo mount /dev/sda2 ~/BIG/ -o umask=000'
 
@@ -71,7 +72,8 @@ if [ -f ~/.bash/ssh_aliases ]; then
 fi
 
 # ===== PYTHON ENVIRONMENTS ===== #
-alias ice="source ~/.virtualenvs/ice/bin/activate"
+alias ice="source ~/.venvs/ice/bin/activate"
+alias nb="~/.scripts/tmux/notebook.sh"
 alias uncertainty="source ~/.virtualenvs/uncertainty/bin/activate"
 alias demucs_env="source ~/.virtualenvs/demucs/bin/activate"
 alias py312="source ~/.virtualenvs/py3.12/bin/activate"export GSETTINGS_SCHEMA_DIR=/usr/share/glib-2.0/schemas/
