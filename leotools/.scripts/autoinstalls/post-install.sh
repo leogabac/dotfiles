@@ -6,6 +6,7 @@ sudo systemctl start bluetooth.service
 
 relevant_packages=(
     git
+    pacman-contrib
     fastfetch
     less
     bluez
@@ -107,8 +108,9 @@ sudo systemctl start zerotier-one.service
 echo -e "[\033[33mINFO\033[0m] Installing AUR packages"
 aur_packages=(
     brave-bin
-    onlyoffice-bin
     zotero-bin
+    wps-office
+    ttf-wps-fonts
     )
 for package in ${aur_packages[@]}; do
     yay -S --noconfirm ${package}
