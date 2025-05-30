@@ -1,6 +1,7 @@
 # ==============================================================================
 # QUICK AESTHETICS
 # ==============================================================================
+#
 
 # function to get the current git branch
 git_branch() {
@@ -8,9 +9,9 @@ git_branch() {
 }
 
 # trim the directory to show only the last folder
-PROMPT_DIRTRIM=1
-export PROMPT_COMMAND='PS1_CMD1=$(git_branch)'
-PS1='\[\e[1m\][\[\e[32m\]\u\[\e[39m\]]\[\e[0m\] \[\e[96;1m\]\w\[\e[0m\]\[\e[1m\]${PS1_CMD1}\[\e[0m\]>'
+# PROMPT_DIRTRIM=1
+# export PROMPT_COMMAND='PS1_CMD1=$(git_branch)'
+# PS1='\[\e[1m\][\[\e[32m\]\u\[\e[39m\]]\[\e[0m\] \[\e[96;1m\]\w\[\e[0m\]\[\e[1m\]${PS1_CMD1}\[\e[0m\]>'
 
 # ==============================================================================
 # GLOBAL VARIABLES
@@ -85,14 +86,12 @@ eval "$(pyenv init - bash)"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
 
+# ===== STARSHIP SETUP ===== #
+eval "$(starship init bash)"
 
 # ===== ZOXIDE SETUP ===== #
-if command -v zoxide > /dev/null 2>&1; then
-  eval "$(zoxide init bash)"
-  alias cd='z'
-else
-  echo -e "\e[33m WARNING: zoxide is not installed\e[0m"
-fi
+eval "$(zoxide init bash)"
+alias cd='z'
 
 
 # Install Ruby Gems to ~/gems

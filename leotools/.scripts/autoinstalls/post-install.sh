@@ -17,6 +17,7 @@ relevant_packages=(
     ntfsprogs
     rsync
     sshfs
+    ripgrep
     )
 for package in ${relevant_packages[@]}; do
     sudo pacman -S --noconfirm ${package}
@@ -44,6 +45,7 @@ cli=(
     yazi
     kitty
     zoxide
+    starship
     fzf
     timeshift
     cronie
