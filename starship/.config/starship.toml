@@ -1,43 +1,57 @@
-# Disable the default prompt line break
 add_newline = false
 
-# Use a simple, minimal format
 format = """
 $username\
 $hostname\
 $directory\
 $git_branch\
+$git_status\
 $line_break\
-$character
+$character\
 """
 
-# Username (only show if not default)
 [username]
 style_user = "bold green"
 style_root = "bold red"
 format = "[$user]($style) "
-show_always = true  # Only show if not default user
+show_always = true  # Always show (like your bash config)
 
-# Hostname (only show if SSH)
 [hostname]
 ssh_only = true
 format = "@[$hostname]($style) "
 style = "bold dimmed"
 
-# Directory (truncated to 3 parent dirs)
 [directory]
 truncation_length = 3
 truncate_to_repo = true
 format = "[$path]($style) "
-style = "bold blue"
+style = "bold #5f87ff"
+read_only = " "
 
-# Git Branch (only shows in a repo)
 [git_branch]
-format = "[$branch]($style) "
-style = "bold purple"
+# format = "[$branch]($style) "
+format = "[$symbol$branch]($style) "
+style = "bold"
+symbol = " "
 
-# Prompt character (❯ for user, # for root)
+[git_status]
+format = "[$all_status$ahead_behind]($style) "
+style = "bold yellow"
+conflicted = "="
+ahead = "⇡$count"
+behind = "⇣$count"
+diverged = "⇕"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+
 [character]
-success_symbol = "[❯](bold green)"
+success_symbol = "[❯](bold white)"
 error_symbol = "[❯](bold red)"
-vicmd_symbol = "[❮](bold purple)"
+vicmd_symbol = "[❮](bold purple)"# Time - disabled by default but can be enabled
+
+[time]
+disabled = false  # Enable if you want timestamp
+format = "[$time]($style) "
+time_format = "%T"  # 24-hour format
