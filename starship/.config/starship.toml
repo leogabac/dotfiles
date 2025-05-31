@@ -11,32 +11,31 @@ $character\
 """
 
 [username]
-style_user = "bold green"
-style_root = "bold red"
+style_user = "bold #ff003c"  # bright blood red
+style_root = "bold #ff003c"
 format = "[$user]($style) "
-show_always = true  # Always show (like your bash config)
+show_always = true
 
 [hostname]
 ssh_only = true
 format = "@[$hostname]($style) "
-style = "bold dimmed"
+style = "bold #00bfff"  # bright azure blue
 
 [directory]
 truncation_length = 3
 truncate_to_repo = true
 format = "[$path]($style) "
-style = "bold #5f87ff"
+style = "bold #1e90ff"  # DodgerBlue (bright and readable)
 read_only = " "
 
 [git_branch]
-# format = "[$branch]($style) "
 format = "[$symbol$branch]($style) "
-style = "bold"
+style = "bold white"
 symbol = " "
 
 [git_status]
 format = "[$all_status$ahead_behind]($style) "
-style = "bold yellow"
+style = "bold #ff1493"  # DeepPink for a vivid, stylish contrast
 conflicted = "="
 ahead = "⇡$count"
 behind = "⇣$count"
@@ -47,11 +46,7 @@ modified = "!"
 staged = "+"
 
 [character]
-success_symbol = "[❯](bold white)"
-error_symbol = "[❯](bold red)"
-vicmd_symbol = "[❮](bold purple)"# Time - disabled by default but can be enabled
+success_symbol = "[❯](bold #ffffff)"   # bright white
+error_symbol = "[❯](bold #ff003c)"     # bright red
+vicmd_symbol = "[❮](bold #9b30ff)"     # bright violet
 
-[time]
-disabled = false  # Enable if you want timestamp
-format = "[$time]($style) "
-time_format = "%T"  # 24-hour format
