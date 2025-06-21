@@ -6,15 +6,15 @@ $hostname\
 $directory\
 $git_branch\
 $git_status\
-$line_break\
 $character\
 """
 
 [username]
 style_user = "bold #ff003c"  # bright blood red
 style_root = "bold #ff003c"
-format = "[$user]($style) "
+format = "[󰣇 $symbol$user]($style) "
 show_always = true
+# ssh_only = true
 
 [hostname]
 ssh_only = true
