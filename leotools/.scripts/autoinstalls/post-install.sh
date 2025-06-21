@@ -11,6 +11,7 @@ relevant_packages=(
     less
     bluez
     bluez-utils
+    bluez-obex
     bluez-deprecated-tools
     pulseaudio-bluetooth
     dosfstools
