@@ -8,7 +8,7 @@ fi
 ENV_ALIAS="$1"
 POST_COMMAND="jupyter notebook --no-browser"
 
-SESSION_NAME="${ENV_ALIAS} notebook"
+SESSION_NAME="${ENV_ALIAS}_notebook"
 WORK_DIR="$HOME"
 
 # Check if the tmux session already exists
