@@ -47,11 +47,15 @@ fi
 # ALIASES AND MODULES
 # ==============================================================================
 
-alias ls='lsd'
+alias ls='lsd -1'
 alias econf='nvim ~/.bashrc'
 alias reload='source ~/.bashrc'
 alias full_upgrade='~/.scripts/update.sh'
 alias fqinfo='cpupower frequency-info'
+
+alias tarball='tar -cvzf'
+alias untar='tar -xvzf'
+alias cwd='pwd | wl-copy'
 
 # alias mBIG='sudo mount /dev/sda2 ~/BIG/ -o umask=000'
 
