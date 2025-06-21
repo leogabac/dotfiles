@@ -23,3 +23,11 @@ sources = ["/home/leogabac/share"]
 tgbase = ""
 rsync_flags = "-avh --delete"
 
+[[custom]]
+name = "test"
+label = "jail bird"
+uuid = "3C031AE62823D49F"
+sources = ["/home/leogabac/share"]
+tgbase = ""
+rsync_flags = "-avh --delete"
+
