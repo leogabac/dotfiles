@@ -88,7 +88,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 
 export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 
 # ===== STARSHIP SETUP ===== #
 eval "$(starship init bash)"
@@ -99,5 +99,5 @@ alias cd='z'
 
 
 # Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+export GEM_HOME="$HOME/.gems"
+export PATH="$HOME/.gems/bin:$PATH"
