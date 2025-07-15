@@ -13,7 +13,7 @@ uuid = "4051FBFC5BE73E7F"
 
 [[default]]
 name = "general"
-sources = ["/home/leogabac/shorui", "/home/leogabac/Desktop"]
+sources = ["/home/leogabac/shorui", "/home/leogabac/Desktop", "/home/leogabac/Pictures", "/home/leogabac/Videos", "/home/leogabac/Downloads", "/home/leogabac/Documents"]
 
 [[custom]]
 name = "share"
