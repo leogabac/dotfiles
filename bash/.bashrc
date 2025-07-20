@@ -3,19 +3,19 @@
 # ==============================================================================
 #
 
-# function to get the current git branch
-git_branch() {
-  git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
+# git_branch() {
+#   git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+# }
 
-# trim the directory to show only the last folder
 # PROMPT_DIRTRIM=1
 # export PROMPT_COMMAND='PS1_CMD1=$(git_branch)'
 # PS1='\[\e[1m\][\[\e[32m\]\u\[\e[39m\]]\[\e[0m\] \[\e[96;1m\]\w\[\e[0m\]\[\e[1m\]${PS1_CMD1}\[\e[0m\]>'
+#
 
 # ==============================================================================
 # GLOBAL VARIABLES
 # ==============================================================================
+
 HISTCONTROL=ignoreboth
 
 shopt -s histappend # append to the history file, don't overwrite it
@@ -23,7 +23,6 @@ shopt -s checkwinsize
 
 HISTSIZE=1000
 HISTFILESIZE=2000
-
 
 # ==============================================================================
 # SETUPS AND BINARY REMAPPINGS
@@ -50,18 +49,16 @@ fi
 alias ls='lsd -1'
 alias econf='nvim ~/.bashrc'
 alias reload='source ~/.bashrc'
-alias full_upgrade='~/.scripts/update.sh'
+alias full_upgrade='~/.scripts/update-btrfs.sh'
 alias fqinfo='cpupower frequency-info'
 
 alias tarball='tar -cvzf'
 alias untar='tar -xvzf'
-alias cwd='pwd | wl-copy'
 
 # alias mBIG='sudo mount /dev/sda2 ~/BIG/ -o umask=000'
 
 # ===== TUI ALIASES ===== #
 alias cdf='source ~/.scripts/cd-fzf.sh .' # avoid subshell
-alias pdfmerge='~/.scripts/tui/pdfmerge.sh'
 alias ypdf='~/.scripts/tui/pdfmerge_yazi.sh'
 alias cm='~/.scripts/tui/quick_commits.sh'
 
