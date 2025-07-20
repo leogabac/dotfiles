@@ -1,7 +1,6 @@
 add_newline = false
 
 format = """
-$custom\
 $username\
 $hostname\
 $directory\
@@ -9,15 +8,15 @@ $git_branch\
 $character\
 """
 [custom.logo]
-command = "echo 󰣇 "
+command = "echo 󱗆 "
 when = "true"
 style = "bold #ff003c"
 
 [username]
 style_user = "bold #ff003c"  # bright blood red
 style_root = "bold #ff003c"
-format = "[󰣇 $symbol$user]($style) "
-show_always = false
+format = "[󱗆 $symbol$user]($style) "
+show_always = true
 
 [hostname]
 ssh_only = true
