@@ -19,6 +19,8 @@ relevant_packages=(
     rsync
     sshfs
     ripgrep
+    imagemagick
+    wl-clipboard
     )
 for package in ${relevant_packages[@]}; do
     sudo pacman -S --noconfirm ${package}
@@ -58,11 +60,15 @@ done
 
 echo -e "[\033[33mINFO\033[0m] Installing dev tools"
 dev_tools=(
+    neovim
     pyenv
     python-virtualenv
     jdk-openjdk
     github-cli
     marksman
+    nodejs
+    tree-sitter-cli
+    python-pynvim
     )
 for package in ${dev_tools[@]}; do
     sudo pacman -S --noconfirm ${package}
@@ -115,6 +121,7 @@ aur_packages=(
     onlyoffice-bin
     wps-office
     ttf-wps-fonts
+    libdiff5
     youtube-music
     elecwhat-bin
     )
