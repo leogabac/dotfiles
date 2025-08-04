@@ -59,6 +59,7 @@ alias untar='tar -xvzf'
 
 # ===== TUI ALIASES ===== #
 alias cdf='source ~/.scripts/cd-fzf.sh .' # avoid subshell
+alias penv='source ~/.scripts/tui/pyenvs.sh .' # avoid subshell
 alias ypdf='~/.scripts/tui/pdfmerge_yazi.sh'
 alias cm='~/.scripts/tui/quick_commits.sh'
 
@@ -86,6 +87,7 @@ eval "$(pyenv init - bash)"
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
+
 
 # ===== STARSHIP SETUP ===== #
 eval "$(starship init bash)"
