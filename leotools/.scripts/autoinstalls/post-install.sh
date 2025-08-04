@@ -52,6 +52,8 @@ cli=(
     fzf
     timeshift
     cronie
+    pdftk
+    grub-btrfs
     )
 for package in ${cli[@]}; do
     sudo pacman -S --noconfirm ${package}
