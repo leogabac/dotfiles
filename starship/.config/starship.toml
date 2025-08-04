@@ -1,12 +1,20 @@
 add_newline = false
 
 format = """
+$python\
 $username\
 $hostname\
 $directory\
 $git_branch\
+$line_break\
 $character\
 """
+
+[python]
+symbol = ' '
+format = '$symbol(${version}) (($virtualenv)) '
+pyenv_version_name = false
+
 [custom.logo]
 command = "echo 󱗆 "
 when = "true"
