@@ -13,13 +13,13 @@ uuid = "4051FBFC5BE73E7F"
 
 [[default]]
 name = "general"
-sources = ["/home/leogabac/shorui", "/home/leogabac/Desktop", "/home/leogabac/Pictures", "/home/leogabac/Videos", "/home/leogabac/Downloads", "/home/leogabac/Documents"]
+sources = ["/home/holo/Desktop", "/home/holo/Pictures", "/home/holo/Videos", "/home/holo/Downloads", "/home/holo/Documents"]
 
 [[custom]]
 name = "share"
 label = "bloodraven"
 uuid = "3B479ACA6574FECE"
-sources = ["/home/leogabac/share"]
+sources = ["/home/holo/share"]
 tgbase = ""
 rsync_flags = "-avh --delete"
 
@@ -27,7 +27,7 @@ rsync_flags = "-avh --delete"
 name = "test"
 label = "jail bird"
 uuid = "3C031AE62823D49F"
-sources = ["/home/leogabac/share"]
+sources = ["/home/holo/share"]
 tgbase = ""
 rsync_flags = "-avh --delete"
 
