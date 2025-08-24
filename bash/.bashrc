@@ -62,6 +62,10 @@ alias cdf='source ~/.scripts/cd-fzf.sh .' # avoid subshell
 alias penv='source ~/.scripts/tui/pyenvs.sh .' # avoid subshell
 alias ypdf='~/.scripts/tui/pdfmerge_yazi.sh'
 alias cm='~/.scripts/tui/quick_commits.sh'
+alias matlab='distrobox enter ubuntu-jammy -- /home/holo/matlab/bin/matlab -softwareopengl'
+alias git-root='git rev-parse --show-toplevel'
+alias pactive='source .venv/bin/activate'
+alias gactive='source $(git-root)/.venv/bin/activate'
 
 # ===== NEOVIM ===== #
 alias lvim='NVIM_APPNAME="nvim-lazyvim" nvim'
@@ -70,8 +74,8 @@ alias lvim='NVIM_APPNAME="nvim-lazyvim" nvim'
 alias tss='~/.scripts/tmux/tmux-sessionizer.sh'
 
 # ===== REMOTE CONNETIONS ===== #
-if [ -f ~/.bash/ssh_aliases ]; then
-  . ~/.bash/ssh_aliases
+if [ -f ~/.ssh_aliases ]; then
+  . ~/.ssh_aliases
 fi
 
 # ===== PYTHON ENVIRONMENTS ===== #
@@ -94,7 +98,7 @@ eval "$(starship init bash)"
 
 # ===== ZOXIDE SETUP ===== #
 eval "$(zoxide init bash)"
-alias cd='z'
+#alias cd='z'
 
 
 # Install Ruby Gems to ~/gems
