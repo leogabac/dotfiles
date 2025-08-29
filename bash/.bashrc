@@ -66,6 +66,7 @@ alias matlab='distrobox enter ubuntu-jammy -- /home/holo/matlab/bin/matlab -soft
 alias git-root='git rev-parse --show-toplevel'
 alias pactive='source .venv/bin/activate'
 alias gactive='source $(git-root)/.venv/bin/activate'
+alias win-container='xfreerdp3 /u:"leogabac" /p:"n1n23n23" /v:127.0.0.1 /cert:tofu /f /scale:180'
 
 # ===== NEOVIM ===== #
 alias lvim='NVIM_APPNAME="nvim-lazyvim" nvim'
@@ -90,6 +91,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 
 
