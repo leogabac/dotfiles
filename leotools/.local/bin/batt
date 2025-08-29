@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Default values
+file=""
+verbose=false
+
+usage() {
+    echo "Usage: $0 [-h] [-v] [-f] [-n]"
+    echo
+    echo "  -h Show this help message"
+    echo "  -s Show the battery thresholds and charging status"
+    echo "  -f Charge now by setting threshold to zero"
+    echo "  -n Set thresholds from 0 to 100"
+    exit 1
+}
+
+# Parse options
+while getopts ":hsfn:" opt; do
+  case $opt in
+    h)
+      usage
+      ;;
+    s)
+      # show the battery status:
+      # start and end thresholds
+      # current charging status
+      # current battery level
+      start_th=$(cat /sys/class/power_supply/BAT0/charge_control_start_threshold)
+      end_th=$(cat /sys/class/power_supply/BAT0/charge_control_end_threshold)
+
+      echo "Battery Thresholds: $start_th, $end_th"
+
+      status=$(cat /sys/class/power_supply/BAT0/status)
+      echo "Battery status: $status"
+
+      energy_now=$(cat /sys/class/power_supply/BAT0/energy_now)
+      energy_full=$(cat /sys/class/power_supply/BAT0/energy_full)
+
+      percentage=$(echo "scale=2; ($energy_now / $energy_full) * 100" | bc)
+      echo "Battery: $percentage%"
+      ;;
+    f)
+      # force charging NOW by setting the start threshold to zero
+      # this change is temporal on restart 
+      # if you have the systemd service enabled
+      echo 0 | sudo tee /sys/class/power_supply/BAT0/charge_control_start_threshold
+      ;;
+    n)
+      # have a "normal" battery charging
+      # from 0 to 100
+      echo 0 | sudo tee /sys/class/power_supply/BAT0/charge_control_start_threshold
+      echo 100 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold
+      ;;
+    :)
+      echo "Error: Option -$OPTARG requires an argument."
+      usage
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG"
+      usage
+      ;;
+  esac
+done

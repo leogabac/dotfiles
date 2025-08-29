@@ -1,2 +1,0 @@
-# Set start threshold to 0% (always allow charging)
-echo 0 | sudo tee /sys/class/power_supply/BAT0/charge_control_start_threshold
