@@ -79,6 +79,8 @@ done
 
 echo -e "[\033[33mINFO\033[0m] Installing desktop software"
 desktop_soft=(
+    firefox
+    chromium
     inkscape
     obs-studio
     signal-desktop
@@ -118,7 +120,6 @@ sudo systemctl start zerotier-one.service
 # some aur packages
 echo -e "[\033[33mINFO\033[0m] Installing AUR packages"
 aur_packages=(
-    brave-bin
     zotero-bin
     onlyoffice-bin
     wps-office
@@ -126,6 +127,7 @@ aur_packages=(
     libdiff5
     youtube-music
     elecwhat-bin
+    ticktick
     )
 for package in ${aur_packages[@]}; do
     yay -S --noconfirm ${package}
