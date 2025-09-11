@@ -110,7 +110,9 @@ desktop_soft=(
     filelight
     flatpak
     gnome-disk-utility
-    evince
+    okular
+    gwenview
+    haruna
     )
 for package in ${desktop_soft[@]}; do
     sudo pacman -S --noconfirm ${package}
