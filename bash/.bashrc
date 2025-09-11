@@ -29,7 +29,7 @@ function y() {
 # ALIASES AND MODULES
 # ==============================================================================
 
-# alias ls='lsd -1'
+alias ls='lsd -1'
 alias econf='nvim ~/.bashrc && source ~/.bashrc'
 alias full_upgrade='~/.scripts/update-btrfs.sh'
 alias tarball='tar -cvzf'
@@ -48,7 +48,6 @@ if [ -f ~/.ssh_aliases ]; then
   . ~/.ssh_aliases
 fi
 
-# ===== PYTHON ENVIRONMENTS ===== #
 # export GSETTINGS_SCHEMA_DIR=/usr/share/glib-2.0/schemas/
 # export QT_QPA_PLATFORM=xcb
 
@@ -66,10 +65,3 @@ export PATH="$HOME/.gems/bin:$PATH"
 
 # ===== STARSHIP SETUP ===== #
 eval "$(starship init bash)"
-
-# ===== ZOXIDE SETUP ===== #
-# eval "$(zoxide init bash)"
-# alias cd='z'
-
-
-
