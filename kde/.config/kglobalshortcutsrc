@@ -30,7 +30,7 @@ mute=Volume Mute,Volume Mute,Mute
 
 [ksmserver]
 Halt Without Confirmation=none,,Shut Down Without Confirmation
-Lock Session=Screensaver,Meta+L\tScreensaver,Lock Session
+Lock Session=Screensaver\tMeta+Shift+L,Meta+L\tScreensaver,Lock Session
 Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Show Logout Screen
 Log Out Without Confirmation=none,,Log Out Without Confirmation
 LogOut=none,,Log Out
