@@ -2,7 +2,7 @@
 # GLOBAL VARIABLES
 # ==============================================================================
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 HISTCONTROL=ignoreboth
 
 shopt -s histappend # append to the history file, don't overwrite it

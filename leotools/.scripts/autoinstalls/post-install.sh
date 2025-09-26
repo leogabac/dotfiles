@@ -64,8 +64,11 @@ cli=(
     zoxide
     starship
     fzf
-    timeshift
-    cronie
+    gum
+    stow
+    keyd
+    # timeshift
+    # cronie
     pdftk
     grub-btrfs
     )
@@ -85,6 +88,8 @@ dev_tools=(
     jdk-openjdk
     github-cli
     marksman
+    ruff
+    prettier
     nodejs
     tree-sitter-cli
     python-pynvim

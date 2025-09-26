@@ -1,0 +1,18 @@
+{
+  "color_scheme": "auto",
+  "syntax_theme": "native",
+  "notebook": {
+    "expand": false,
+    "always_show_tab_bar": true,
+    "show_cell_borders": false,
+    "edit_mode": "vi"
+  },
+
+  "console": {
+    "color_scheme": "default",
+    "syntax_theme": "default"
+  },
+  "preview": {
+    "show_cell_borders": true
+  }
+}

@@ -13,7 +13,7 @@ uuid = "4051FBFC5BE73E7F"
 
 [[default]]
 name = "general"
-sources = ["/home/holo/Desktop", "/home/holo/Pictures", "/home/holo/Videos", "/home/holo/Downloads", "/home/holo/Documents"]
+sources = ["/home/holo/dotfiles","/home/holo/Desktop", "/home/holo/Pictures", "/home/holo/Videos", "/home/holo/Downloads", "/home/holo/Documents", "/home/holo/Music"]
 
 [[custom]]
 name = "share"
