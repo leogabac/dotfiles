@@ -131,16 +131,6 @@ echo -e "[\033[33mINFO\033[0m] Installing LaTeX dependencies"
 sudo pacman -S texlive zathura zathura-pdf-mupdf
 
 # ===============================================================================
-# YAY
-# ===============================================================================
-
-echo -e "[\033[33mINFO\033[0m] Installing yay"
-mkdir /tmp/yay
-git clone https://aur.archlinux.org/yay.git /tmp/yay
-cd /tmp/yay
-makepkg -si
-
-# ===============================================================================
 # ZERO TIER
 # ===============================================================================
 
