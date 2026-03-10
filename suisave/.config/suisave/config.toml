@@ -24,9 +24,9 @@ tgbase = ""
 rsync_flags = "-avh --delete"
 
 [[custom]]
-name = "test"
-label = "jail bird"
-uuid = "3C031AE62823D49F"
+name = "share"
+label = "towa"
+uuid = "2370-01A2"
 sources = ["/home/holo/share"]
 tgbase = ""
 rsync_flags = "-avh --delete"

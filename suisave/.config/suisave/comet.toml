@@ -1,0 +1,36 @@
+[global]
+# pc_name = ""
+# default_target_base = "pc_backups"
+default_rsync_flags = ["-a", "--delete"]
+
+[drives.bloodraven]
+uuid = "3B479ACA6574FECE"
+
+[drives.aura]
+uuid = "4051FBFC5BE73E7F"
+
+[drives.towa]
+uuid = "2370-01A2"
+
+[[jobs]]
+name = "general"
+sources = [
+  "/home/holo/dotfiles",
+  "/home/holo/Desktop",
+  "/home/holo/Pictures",
+  "/home/holo/Videos",
+  "/home/holo/Downloads",
+  "/home/holo/Documents",
+  "/home/holo/Music",
+]
+drives = ["bloodraven", "aura", "towa"]
+
+[[jobs]]
+name = "share"
+target_base = ""
+pc_name = ""
+sources = [
+  "/home/holo/share/",
+]
+drives = ["bloodraven", "aura", "towa"]
+
