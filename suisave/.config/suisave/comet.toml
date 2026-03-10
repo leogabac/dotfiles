@@ -1,7 +1,7 @@
-[global]
+# [global]
 # pc_name = ""
 # default_target_base = "pc_backups"
-default_rsync_flags = ["-a", "--delete"]
+# default_rsync_flags = ["-a", "--delete"]
 
 [drives.bloodraven]
 uuid = "3B479ACA6574FECE"
