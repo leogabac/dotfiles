@@ -1,0 +1,25 @@
+session:
+  name: experiments
+  windows:
+  - name: ide
+    layout: null
+    panes:
+    - cwd: ./
+      command:
+      - source ./.venv/bin/activate.fish
+      - nvim
+  - name: run
+    layout: main-horizontal
+    panes:
+    - cwd: .
+      command:
+      - source .venv/bin/activate.fish
+    - cwd: ./data
+      command:
+      - source .venv/bin/activate.fish
+  - name: jupyter
+    layout: null
+    panes:
+    - cwd: .
+      command:
+      - ./jupyter

@@ -3,16 +3,16 @@
 # default_target_base = "pc_backups"
 # default_rsync_flags = ["-a", "--delete"]
 
-[drives.bloodraven]
-uuid = "3B479ACA6574FECE"
-
 [drives.aura]
 uuid = "4051FBFC5BE73E7F"
 
 [drives.towa]
 uuid = "2370-01A2"
 
-[[jobs]]
+[drives.bloodraven]
+uuid = "3B479ACA6574FECE"
+
+[[jobs.backup]]
 name = "general"
 sources = [
   "/home/holo/dotfiles",
@@ -23,14 +23,22 @@ sources = [
   "/home/holo/Documents",
   "/home/holo/Music",
 ]
-drives = ["bloodraven", "aura", "towa"]
+drives = ["aura", "towa", "bloodraven"]
 
-[[jobs]]
+[[jobs.custom]]
 name = "share"
 target_base = ""
-pc_name = ""
 sources = [
   "/home/holo/share/",
 ]
-drives = ["bloodraven", "aura", "towa"]
+drives = ["aura", "towa", "bloodraven"]
+
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,9 @@
+session:
+  name: default
+  windows:
+  - layout: null
+    name: '0'
+    panes:
+    - command:
+      - null
+      cwd: .

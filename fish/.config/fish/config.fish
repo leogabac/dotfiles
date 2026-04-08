@@ -3,6 +3,8 @@
 # SETUPS AND BINARY REMAPPINGS
 # ==============================================================================
 
+set fish_greeting ""
+
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"
@@ -36,6 +38,11 @@ abbr pacq 'sudo pacman -Q'
 
 starship init fish | source
 
+set -x EDITOR /usr/bin/nvim
 set -x PATH $HOME/.local/bin $PATH
 set -x PATH $HOME/.local/share/gem/ruby/3.4.0/bin $PATH
 set -Ux PYENV_ROOT $HOME/.pyenv
+
+# source $HOME/.holo/bin/activate.fish
+
+zoxide init fish | source

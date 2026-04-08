@@ -1,6 +1,4 @@
+
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
-	url = https://github.com/leogabac/leovim.git
-[submodule "nvim/.config/hakovim"]
-	path = nvim/.config/hakovim
-	url = https://github.com/leogabac/hakovim.git
+	url = https://github.com/leogabac/holovim.git
