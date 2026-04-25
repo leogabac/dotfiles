@@ -23,6 +23,7 @@ alias full_upgrade '~/.scripts/update-btrfs.sh'
 alias tarball 'tar -cvzf'
 alias untar 'tar -xvzf'
 alias gactive 'source (git rev-parse --show-toplevel)/.venv/bin/activate.fish'
+alias leovim 'NVIM_APPNAME=leovim nvim'
 
 
 abbr gs 'git status'

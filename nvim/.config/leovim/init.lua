@@ -36,7 +36,7 @@ local plugins = {
   require("plugins.coding.autocompletion"),
   require("plugins.coding.autoformatting"),
   require("plugins.coding.mini-nvim"),
-  require("plugins.coding.treesitter"),
+  -- require("plugins.coding.treesitter"),
 
   require("plugins.enhancements.latex"),
   require("plugins.enhancements.git"),
