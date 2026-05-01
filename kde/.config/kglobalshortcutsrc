@@ -372,6 +372,7 @@ activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
 activate widget 119=,none,Activate Application Launcher Widget
 activate widget 148=,none,Activate Application Launcher Widget
 activate widget 175=,none,Activate Application Launcher Widget
+activate widget 254=,none,Activate Application Launcher Widget
 activate widget 27=none,none,Activate Application Menu Widget
 activate widget 28=none,none,Activate Application Menu Widget
 activate widget 30=none,none,Activate Digital Clock Widget

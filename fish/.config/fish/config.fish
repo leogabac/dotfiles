@@ -47,3 +47,4 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 # source $HOME/.holo/bin/activate.fish
 
 zoxide init fish | source
+rpy shell-init --shell fish | source
