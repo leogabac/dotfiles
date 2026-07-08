@@ -48,3 +48,4 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 
 zoxide init fish | source
 rpy shell-init --shell fish | source
+

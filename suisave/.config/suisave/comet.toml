@@ -1,7 +1,6 @@
-# [global]
-# pc_name = ""
-# default_target_base = "pc_backups"
-# default_rsync_flags = ["-a", "--delete"]
+[global]
+default_target_base = "backups"
+default_rsync_flags = ["-a", "--delete", "--exclude=.venv/"]
 
 [drives.aura]
 uuid = "4051FBFC5BE73E7F"
@@ -10,35 +9,14 @@ uuid = "4051FBFC5BE73E7F"
 uuid = "2370-01A2"
 
 [drives.bloodraven]
-uuid = "3B479ACA6574FECE"
+uuid = "0ba9273e-bf4e-4aa0-8feb-0b495e1da0b8"
 
 [[jobs.backup]]
 name = "general"
-sources = [
-  "/home/holo/dotfiles",
-  "/home/holo/Desktop",
-  "/home/holo/Pictures",
-  "/home/holo/Videos",
-  "/home/holo/Downloads",
-  "/home/holo/Documents",
-  "/home/holo/Music",
-]
+sources = ["/home/holo/dotfiles", "/home/holo/projects", "/home/holo/desktop", "/home/holo/pictures", "/home/holo/videos", "/home/holo/downloads", "/home/holo/documents", "/home/holo/music", "/home/holo/.codex"]
 drives = ["aura", "towa", "bloodraven"]
 
 [[jobs.custom]]
 name = "share"
-target_base = ""
-sources = [
-  "/home/holo/share/",
-]
+sources = ["/home/holo/share/"]
 drives = ["aura", "towa", "bloodraven"]
-
-
-
-
-
-
-
-
-
-

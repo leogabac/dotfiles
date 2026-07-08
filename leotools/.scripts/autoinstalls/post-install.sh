@@ -20,7 +20,6 @@ relevant_packages=(
     bluez-utils
     bluez-obex
     bluez-deprecated-tools
-    pulseaudio-bluetooth
     dosfstools
     ntfsprogs
     rsync
@@ -32,21 +31,6 @@ relevant_packages=(
 for package in ${relevant_packages[@]}; do
     sudo pacman -S --noconfirm ${package}
 done
-
-# ===============================================================================
-# NIRI AND RELATED
-# ===============================================================================
-
-relevant_packages=(
-    niri
-    alacritty
-    thunar
-    )
-for package in ${relevant_packages[@]}; do
-    sudo pacman -S --noconfirm ${package}
-done
-
-
 
 # ===============================================================================
 # PYTHON BUILD DEPS
@@ -79,13 +63,11 @@ cli=(
     zoxide
     starship
     fzf
-    gum
     stow
     keyd
-    # timeshift
-    # cronie
+    timeshift
+    cronie
     pdftk
-    grub-btrfs
     )
 for package in ${cli[@]}; do
     sudo pacman -S --noconfirm ${package}
@@ -120,13 +102,10 @@ done
 echo -e "[\033[33mINFO\033[0m] Installing desktop software"
 desktop_soft=(
     firefox
-    chromium
     inkscape
     obs-studio
-    signal-desktop
     noto-fonts-cjk
     kcolorchooser
-    spectacle
     filelight
     flatpak
     gnome-disk-utility
@@ -146,13 +125,6 @@ echo -e "[\033[33mINFO\033[0m] Installing LaTeX dependencies"
 sudo pacman -S texlive zathura zathura-pdf-mupdf
 
 # ===============================================================================
-# ZERO TIER
-# ===============================================================================
-
-sudo pacman -S zerotier-one
-sudo systemctl enable --now zerotier-one.service
-
-# ===============================================================================
 # AUR PACKAGES
 # ===============================================================================
 
@@ -161,16 +133,13 @@ aur_packages=(
     ttf-blex-nerd-font-git
     zotero-bin
     onlyoffice-bin
-    wps-office
     ttf-wps-fonts
-    libdiff5
     youtube-music
     elecwhat-bin
     wechat-bin
-    ticktick
     )
 for package in ${aur_packages[@]}; do
-    yay -S --noconfirm ${package}
+    paru -S --noconfirm ${package}
 done
 
 

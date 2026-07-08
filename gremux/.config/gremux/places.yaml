@@ -1,8 +1,6 @@
 places:
 - '~'
-- ~/Documents/
-- ~/Documents/mnt/
-- ~/Documents/phd/
-- ~/Documents/projects/
-- /home/holo/dotfiles/nvim/.config/nvim
-- /home/holo/dotfiles/nvim/.config/
+- ~/documents/
+- ~/documents/mnt/
+- ~/documents/phd/
+- ~/projects/

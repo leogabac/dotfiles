@@ -11,13 +11,18 @@ if [[ -z $selected ]]; then
 fi
 
 selected_name=$(basename "$selected" | tr . _)
+inside_tmux=0
+
+if tmux display-message -p '#S' >/dev/null 2>&1; then
+    inside_tmux=1
+fi
 
 # Check if the session already exists
 if tmux has-session -t="$selected_name" 2>/dev/null; then
-    if [[ -z $TMUX ]]; then
-        tmux attach-session -t "$selected_name"
-    else
+    if [[ $inside_tmux -eq 1 ]]; then
         tmux switch-client -t "$selected_name"
+    else
+        tmux attach-session -t "$selected_name"
     fi
     exit 0
 fi
@@ -26,9 +31,8 @@ fi
 tmux new-session -ds "$selected_name" -c "$selected"
 
 # Attach or switch to the session
-if [[ -z $TMUX ]]; then
-    tmux attach-session -t "$selected_name"
-else
+if [[ $inside_tmux -eq 1 ]]; then
     tmux switch-client -t "$selected_name"
+else
+    tmux attach-session -t "$selected_name"
 fi
-
