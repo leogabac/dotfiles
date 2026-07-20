@@ -411,6 +411,8 @@ _launch=none
 _launch=Meta\tSearch\tAlt+Space\tAlt+F2
 
 [services][org.kde.spectacle.desktop]
+CurrentMonitorScreenShot=none
+OpenWithoutScreenshot=none
 RecordWindow=none
 
 [services][org.kde.touchpadshortcuts.desktop]
