@@ -1,138 +1,142 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
   "logo": {
-    // "source": "~/dotfiles/graphics/.wallpapers/dotart/holo.dotart",
-    "color": {"1":"cyan"},
+    "source": "arch",
+    "color": {
+      "1": "#55b9ff",
+      "2": "#1e5a9b",
+      "3": "#ff003c"
+    }
   },
+
   "display": {
-    "separator": "->",
-    "constants": [
-      "──────────────────────────────"
-    ]
+    "separator": "    ",
+    "constants": ["──────────────────────────────"]
   },
- "modules": [
-    // title
+
+  "modules": [
     {
       "type": "custom",
-      "format": "──────────────────────────────",
-      "outputColor": "90"
+      "format": "╭─────────────────────────────╮",
+      "outputColor": "#1e5a9b"
     },
     {
       "type": "title",
-      "keyWidth": 10
+      "keyWidth": 12
     },
     {
       "type": "datetime",
       "key": " ",
+      "format": "{year}-{month-pretty}-{day-pretty}  {hour-pretty}:{minute-pretty}:{second-pretty}",
+      "outputColor": "#55b9ff"
     },
     {
       "type": "custom",
-      "format": "──────────────────────────────",
-      "outputColor": "90"
+      "format": "╰─────────────────────────────╯",
+      "outputColor": "#1e5a9b"
     },
-    // OS information
+
+    "break",
+    {
+      "type": "custom",
+      "format": "󱗆  SYSTEM",
+      "outputColor": "#ff003c"
+    },
     {
       "type": "os",
-      "key": " OS",
-      "keyColor": "yellow",
-      "format": "{2}"
-    },
-    {
-      "type": "os",
-      //"key": "├{icon}",
       "key": "├󰣇",
-      "keyColor": "yellow"
+      "keyColor": "#55b9ff"
     },
     {
       "type": "kernel",
       "key": "├",
-      "keyColor": "yellow"
+      "keyColor": "#55b9ff"
     },
     {
       "type": "packages",
       "key": "├󰏖",
-      "keyColor": "yellow"
+      "keyColor": "#55b9ff"
     },
     {
       "type": "shell",
-      "key": "└",
-      "keyColor": "yellow"
+      "key": "╰",
+      "keyColor": "#55b9ff"
     },
+
     "break",
-    // Desktop environment information
+    {
+      "type": "custom",
+      "format": "󰍹  SESSION",
+      "outputColor": "#ff003c"
+    },
     {
       "type": "wm",
-      "key": " DE/WM",
-      "keyColor": "blue"
+      "key": "├",
+      "keyColor": "#55b9ff"
     },
     {
       "type": "lm",
       "key": "├󰧨",
-      "keyColor": "blue"
+      "keyColor": "#55b9ff"
     },
     {
       "type": "wmtheme",
       "key": "├󰉼",
-      "keyColor": "blue"
-    },
-    {
-      "type": "icons",
-      "key": "├󰀻",
-      "keyColor": "blue"
+      "keyColor": "#55b9ff"
     },
     {
       "type": "terminal",
-      "key": "├",
-      "keyColor": "blue"
+      "key": "╰",
+      "keyColor": "#55b9ff"
     },
-  // {
-  //     "type": "wallpaper",
-  //     "key": "└󰸉",
-  //     "keyColor": "blue"
-  // },
 
     "break",
-  // PC specs
+    {
+      "type": "custom",
+      "format": "󰌢  HARDWARE",
+      "outputColor": "#ff003c"
+    },
     {
       "type": "host",
-      "key": "󰌢 PC",
-      "keyColor": "green"
+      "key": "├󰌢",
+      "keyColor": "#55b9ff"
     },
     {
       "type": "cpu",
       "key": "├󰻠",
-      "keyColor": "green"
+      "keyColor": "#55b9ff"
     },
     {
       "type": "gpu",
       "key": "├󰍛",
-      "keyColor": "green"
-    },
-    {
-      "type": "disk",
-      // only take / partition into account
-      "folders":"/",
-      "key": "├",
-      "keyColor": "green"
+      "keyColor": "#55b9ff"
     },
     {
       "type": "memory",
       "key": "├󰑭",
-      "keyColor": "green"
+      "keyColor": "#55b9ff"
     },
     {
-      "type": "swap",
-      "key": "├󰓡",
-      "keyColor": "green"
+      "type": "disk",
+      "folders": "/",
+      "key": "├",
+      "keyColor": "#55b9ff"
     },
     {
       "type": "display",
       "key": "├󰍹",
-      "keyColor": "green"
+      "keyColor": "#55b9ff"
+    },
+    {
+      "type": "battery",
+      "key": "├󰁹",
+      "keyColor": "#55b9ff"
     },
     {
       "type": "uptime",
-      "key": "└󰅐",
-      "keyColor": "green"
-    },
-    ]}
+      "key": "╰󰅐",
+      "keyColor": "#55b9ff"
+    }
+  ]
+}
