@@ -39,6 +39,10 @@ abbr pacq 'sudo pacman -Q'
 
 starship init fish | source
 
+if type -q direnv
+	direnv hook fish | source
+end
+
 set -x EDITOR /usr/bin/nvim
 set -x PATH $HOME/.local/bin $PATH
 set -x PATH $HOME/.local/share/gem/ruby/3.4.0/bin $PATH
@@ -48,4 +52,3 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 
 zoxide init fish | source
 rpy shell-init --shell fish | source
-

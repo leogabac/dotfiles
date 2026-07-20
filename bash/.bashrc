@@ -65,3 +65,7 @@ export PATH="$HOME/.gems/bin:$PATH"
 
 # ===== STARSHIP SETUP ===== #
 eval "$(starship init bash)"
+
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook bash)"
+fi

@@ -7,7 +7,12 @@ $hostname\
 $directory\
 $git_branch\
 $git_status\
+$git_metrics\
+$direnv\
 $line_break\
+$status\
+$cmd_duration\
+$jobs\
 $character\
 """
 
@@ -56,8 +61,36 @@ stashed = "$"
 modified = "!"
 staged = "+"
 
+[git_metrics]
+disabled = false
+format = "([+$added]($added_style) )([-$deleted]($deleted_style) )"
+added_style = "bold #55b9ff"
+deleted_style = "bold #ff003c"
+
+[direnv]
+disabled = false
+format = "[$symbol$loaded]($style) "
+symbol = "󰘦 "
+style = "bold #55b9ff"
+
+[status]
+disabled = false
+format = "[$symbol$status]($style) "
+symbol = "✘ "
+style = "bold #ff003c"
+
+[cmd_duration]
+min_time = 2_000
+format = "[󱎫 $duration]($style) "
+style = "bold #55b9ff"
+
+[jobs]
+symbol = "✦ "
+number_threshold = 1
+format = "[$symbol$number]($style) "
+style = "bold #55b9ff"
+
 [character]
 success_symbol = "[❯](bold #ffffff)"   # bright white
 error_symbol = "[❯](bold #ff003c)"     # bright red
 vicmd_symbol = "[❮](bold #9b30ff)"     # bright violet
-
