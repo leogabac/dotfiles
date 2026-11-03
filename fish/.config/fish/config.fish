@@ -52,3 +52,7 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 
 zoxide init fish | source
 rpy shell-init --shell fish | source
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/holo/.local/bin" $PATH
