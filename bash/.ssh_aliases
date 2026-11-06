@@ -1,3 +1,0 @@
-
-alias hpc='ssh leonardo004@172.21.33.13'
-alias hpc-mount='sshfs leonardo004@172.21.33.13:/home/leonardo004/ /home/holo/mounts/hpc-wfly/'

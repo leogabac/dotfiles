@@ -1,0 +1,8 @@
+#!/bin/sh
+export CODEX_HOME="$HOME/.codex-alt"
+export CODEX_ELECTRON_USER_DATA_PATH="$HOME/.local/share/chatgpt-alt"
+export CODEX_APP_SERVER_FORCE_CLI=1
+
+mkdir -p "$CODEX_HOME" "$CODEX_ELECTRON_USER_DATA_PATH"
+
+exec chatgpt --user-data-dir="$CODEX_ELECTRON_USER_DATA_PATH" "$@"

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ChatGPT (Alt)
+Comment=ChatGPT by OpenAI - Secondary Account
+GenericName=AI assistant
+Exec=sh -c 'exec "$HOME/.local/bin/chatgpt-alt"'
+Icon=chatgpt
+Type=Application
+StartupNotify=true
+Categories=Utility;Development;
