@@ -1,12 +1,4 @@
 #!/bin/bash
-
-# ===============================================================================
-# SYSTEM SERVICES
-# ===============================================================================
-
-echo -e "[\033[33mINFO\033[0m] Enabling bluetooth daemon"
-sudo systemctl enable --now bluetooth.service
-
 # ===============================================================================
 # BASIC SYSTEM PACKAGES
 # ===============================================================================
@@ -23,6 +15,8 @@ relevant_packages=(
     dosfstools
     ntfsprogs
     rsync
+    openssh
+    rclone
     sshfs
     ripgrep
     imagemagick
@@ -68,6 +62,7 @@ cli=(
     timeshift
     cronie
     pdftk
+    jq
     )
 for package in ${cli[@]}; do
     sudo pacman -S --noconfirm ${package}
@@ -80,16 +75,16 @@ done
 echo -e "[\033[33mINFO\033[0m] Installing dev tools"
 dev_tools=(
     neovim
-    pyenv
-    python-virtualenv
     jdk-openjdk
     github-cli
     marksman
     ruff
     prettier
     nodejs
+    go
     tree-sitter-cli
     python-pynvim
+    uv
     )
 for package in ${dev_tools[@]}; do
     sudo pacman -S --noconfirm ${package}
@@ -101,7 +96,6 @@ done
 
 echo -e "[\033[33mINFO\033[0m] Installing desktop software"
 desktop_soft=(
-    firefox
     inkscape
     obs-studio
     noto-fonts-cjk
@@ -132,14 +126,21 @@ echo -e "[\033[33mINFO\033[0m] Installing AUR packages"
 aur_packages=(
     ttf-blex-nerd-font-git
     zotero-bin
-    onlyoffice-bin
+    youtube-music-for-desktop-bin
+    wps-office-cn
     ttf-wps-fonts
-    youtube-music
-    elecwhat-bin
     wechat-bin
+
+    # my own packages
+    suisave
+    gremux
     )
 for package in ${aur_packages[@]}; do
     paru -S --noconfirm ${package}
 done
 
+# also add the official way to install codex cli and codex desktop from openai for arch
+# i think in this pc is an additional repo to pacman?
 
+# final checks
+# check binaries in path for kei, rpy, and reicloud-sync, if not warn to install them
