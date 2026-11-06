@@ -312,6 +312,9 @@ def main(argv=None) -> int:
                 "ERROR",
                 f"Missing required commands: {', '.join(missing)}. Install them before retrying.",
             )
+            status("WARN", f"No groups were attempted: {', '.join(selected)}.")
+            if "paru" in missing:
+                status("INFO", "To install the non-AUR groups first, use --skip aur. To install only OpenAI tools, use --only codex,chatgpt.")
             return 2
 
     status("INFO", f"Selected groups: {', '.join(selected)}")
@@ -336,6 +339,10 @@ def main(argv=None) -> int:
                 "WARN",
                 "The failed transaction may have made changes; review its output before retrying.",
             )
+            pending = selected[index:]
+            if pending:
+                status("WARN", f"Not attempted: {', '.join(pending)}.")
+                status("INFO", f"To run those groups separately: python3 {shlex.quote(sys.argv[0])} --only {','.join(pending)}")
             return 1
         if args.dry_run:
             continue
